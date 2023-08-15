@@ -1,11 +1,3 @@
-<?php
-// Set the dynamic page title
-$pageTitle = "Redstore | Ecommerce website";
-
-// Include the header
-include 'header.php';
-?>
-
   <!------------------------------ featured categories------------------------------>
   <div class="categories">
             <div class="small-container">
@@ -273,6 +265,3 @@ include 'header.php';
                 </div>
             </div>
         </div>
-<?php
-include 'footer.php';
-?>
