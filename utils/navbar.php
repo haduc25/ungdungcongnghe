@@ -1,6 +1,6 @@
-<div class="navbar" style='border: 1px solid #000'>
+<div class="navbar">
 	<div class="logo">
-		<a href="index.html"><img src="images/logo.png" width="185px"></a>
+		<a href="http://localhost/ungdungcongnghe/shoe_store"><img src="images/logo.png" width="185px"></a>
 	</div>
 	<nav>
 		<ul id="MenuItems">

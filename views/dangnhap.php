@@ -10,7 +10,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-        <div class="container"><?php require_once './utils/navbar.php'; ?></div>
+<body>
+        <div class="container">
+            <?php 
+                require_once './utils/navbar.php' 
+            ?>
+        </div>
         
         <!------------------------------ account-page details------------------------------>
 
@@ -50,8 +55,48 @@
         
        
         <!----------------------------------footer------------------------------------->
-		<div class="footer">
-		</div>
+        <div class ="footer">
+        <div class="container">
+            
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Tải xuống ứng dụng cho điện thoại di động Android và ios.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png" alt="">
+                        <img src="images/app-store.png" alt="">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png">
+                    <p>Mục đích của chúng tôi là làm cho nhiều người có thể tiếp cận niềm vui và lợi ích của thể thao một cách bền vững.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                   <ul>
+                       <li>Giới thiệu về chúng tôi</li>
+                       <li>Phiếu giảm giá</li>
+                       <li>Bài viết trên blog</li>
+                       <li>Chính sách đổi trả</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                   <ul>
+                       <li>Facebook</li>
+                       <li>Twitter</li>
+                       <li>Instagram</li>
+                       <li>Youtube</li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <hr><!--horizontal line-->
+            <p class="copyright">Copyright 2021 - Apurba Kr. Pramanik</p>
+            
+        </div>
+    </div>
         
         
         <!-----------------------------------js for toggle menu-------------------------------------->
@@ -86,7 +131,7 @@
                 Indicator.style.transform="translateX(0px)";
             }
 
-            // login();
+            login();
         </script>
 
 </body>
