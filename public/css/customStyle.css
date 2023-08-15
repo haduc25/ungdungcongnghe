@@ -1,0 +1,8 @@
+.nav-link__active {
+    font-weight: 600;
+    color: #191919;
+}
+
+.nav-link__active:hover {
+    opacity: .8;
+}
