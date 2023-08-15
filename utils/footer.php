@@ -37,25 +37,23 @@
             </div>
             
             <hr><!--horizontal line-->
-            <p class="copyright">Copyright 2021 - Apurba Kr. Pramanik</p>
+            <p class="copyright">Copyright 2023</p>
             
         </div>
-    </div>
+</div>
         
         
-        <!-----------------------------------js for toggle menu----------------------------------------------->
-        <script>
-            var menuItems=document.getElementById("MenuItems");
-            
+<!-----------------------------------js for toggle menu----------------------------------------------->
+<script>
+    var menuItems=document.getElementById("MenuItems");
+    
+    MenuItems.style.maxHeight="0px";
+    function menutoggle(){
+        if(MenuItems.style.maxHeight == "0px"){
+            MenuItems.style.maxHeight="200px";
+        }
+        else{
             MenuItems.style.maxHeight="0px";
-            function menutoggle(){
-                if(MenuItems.style.maxHeight == "0px"){
-                    MenuItems.style.maxHeight="200px";
-                }
-                else{
-                    MenuItems.style.maxHeight="0px";
-                }
-            }
-        </script>
-    </body>
-</html>
+        }
+    }
+</script>
