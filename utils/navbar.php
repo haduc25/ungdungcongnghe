@@ -1,13 +1,18 @@
+<?php
+if (isset($_POST['nutdx'])) {
+	session_unset();
+}
+?>
 <div class="navbar">
 	<div class="logo">
 		<a href="http://localhost/ungdungcongnghe/shoe_store"><img src="images/logo.png" width="185px"></a>
 	</div>
 	<nav>
 		<ul id="MenuItems">
-			<li><a href="http://localhost/ungdungcongnghe/shoe_store">Home</a></li>
-			<li><a href="products.html">Products</a></li>
-			<li><a href="">About</a></li>
-			<li><a href="">Contact</a></li>
+			<li><a href="http://localhost/ungdungcongnghe/shoe_store">Trang chủ</a></li>
+			<li><a href="products.html">Sản phẩm</a></li>
+			<li><a href="">Giới thiệu</a></li>
+			<li><a href="">Liên hệ</a></li>
 			<li> <?php
 					if (isset($_SESSION['tennd'])) {
 						if ($_SESSION['quyennd'] == 1) {

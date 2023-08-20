@@ -23,23 +23,23 @@
                     <div class="col-2">
                         <div class="form-container">
                             <div class="form-btn">
-                                <span onclick="login()">Login</span>
-                                <span onclick="register()">Register</span>
+                                <span onclick="login()">Đăng nhập</span>
+                                <span onclick="register()">Đăng ký</span>
                                 <hr id="Indicator">
                             </div>
                             <form id="LoginForm" method="post">
                                 <input type="text" placeholder="username" name="tdn">
                                 <input type="password" placeholder="password" name="mk">
-                                <button type="submit" class="btn" name="nutdangnhap">Login</button>
+                                <button type="submit" class="btn" name="nutdangnhap">Đăng nhập</button>
 				                <!-- <input type="submit" class="btn btn-lg btn-primary" name="nutdangnhap" value="ĐĂNG NHẬP"> -->
-                                <a href="">Forgot password</a>
+                                <a href="">Quên mật khẩu?</a>
                             </form>
                             
                             <form id="RegForm">
                                 <input type="text" placeholder="username">
                                 <input type="email" placeholder="email">
                                 <input type="password" placeholder="password">
-                                <button type="submit" class="btn">Register</button>
+                                <button type="submit" class="btn">Đăng ký</button>
                             </form>
                         </div>
                     </div>
