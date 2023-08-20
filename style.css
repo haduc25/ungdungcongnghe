@@ -103,6 +103,7 @@ p{
 }
 
 .small-container{
+    font-family: var(--title-font);
     max-width: 1080px;
     margin: auto;
     padding-left: 25px;

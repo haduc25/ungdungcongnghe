@@ -10,7 +10,7 @@ if (isset($_POST['nutdx'])) {
 	<nav>
 		<ul id="MenuItems">
 			<li><a href="http://localhost/ungdungcongnghe/shoe_store">Trang chủ</a></li>
-			<li><a href="products.html">Sản phẩm</a></li>
+			<li><a href="index.php?action=sanpham">Sản phẩm</a></li>
 			<li><a href="">Giới thiệu</a></li>
 			<li><a href="">Liên hệ</a></li>
 			<li> <?php

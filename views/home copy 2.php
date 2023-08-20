@@ -222,7 +222,7 @@ if (isset($_POST['nutdx'])) {
                         <img src="images/image1.png" class="offer-img">
                     </div>
                     <div class="col-2">
-                        <p>Độc quyền có sẵn trên RedStore</p>
+                        <p>Độc quyền có sẵn trên LeoPard</p>
                         <h1>Sports Shoes</h1>
                         <small> Mua trực tuyến các bộ sưu tập giày thể thao mới nhất trên Redstore với giá tốt nhất từ các thương hiệu hàng đầu như Adidas, Nike, Puma, Asics và Sparx khi rảnh rỗi với giá tốt nhất. </small><br>
                         <a href="products.html" class="btn">Mua ngay &#8594;</a>
