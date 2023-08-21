@@ -16,45 +16,65 @@ class SanphamController
 		if (isset($_GET['action'])) {
 			switch ($_GET['action']) {
 						
-				case 'dangnhap':
-					include_once('views/dangnhap.php');
-					if (isset($_POST['nutdangnhap'])) {
-						$t=$_POST['tdn'];
-						$m=$_POST['mk'];
-						$dem1=$this->model->dembanghi($t,$m);
-						$data2=$this->model->kiemtradangnhap($t,$m);
-						if ($dem1 == 0) {
-							echo "Đăng nhập thất bại";
-						}else{
-							$_SESSION['tennd']=$t;
-							$_SESSION['quyennd']=$data2[0]['quyen_nd'];
+				// case 'dangnhap':
+				// 	include_once('views/dangnhap.php');
+				// 	if (isset($_POST['nutdangnhap'])) {
+				// 		$t=$_POST['tdn'];
+				// 		$m=$_POST['mk'];
+				// 		$dem1=$this->model->dembanghi($t,$m);
+				// 		$data2=$this->model->kiemtradangnhap($t,$m);
+				// 		if ($dem1 == 0) {
+				// 			echo "Đăng nhập thất bại";
+				// 		}else{
+				// 			$_SESSION['tennd']=$t;
+				// 			$_SESSION['quyennd']=$data2[0]['quyen_nd'];
 							// header('Location:index.php');
-							?>
-								<script>location.href = 'index.php';</script>
-							<?php
-						}
-					}
-					break;
+							
+								//<script>location.href = 'index.php';</script>
 						
-				case 'dangky':
-					include_once('views/dangnhap.php');
-					if (isset($_POST['nutdangky'])) {
-						$t=$_POST['tdn'];
-						$m=$_POST['mk'];
-						$dem1=$this->model->dembanghi($t,$m);
-						$data2=$this->model->kiemtradangnhap($t,$m);
-						if ($dem1 == 0) {
-							echo "Đăng nhập thất bại";
-						}else{
-							$_SESSION['tennd']=$t;
+					// 	}
+					// }
+					// break;
+						
+					case 'dangnhap':
+						include_once('views/dangnhap.php');
+						if (isset($_POST['nutdangnhap'])) {
+							$t=$_POST['tdn'];
+							$m=$_POST['mk'];
+							$dem1=$this->model->dembanghi($t,$m);
+							$data2=$this->model->kiemtradangnhap($t,$m);
+							if ($dem1 == 0) {
+								echo "Đăng nhập thất bại";
+							}else{
+								$_SESSION['tennd']=$t;
+								$_SESSION['quyennd']=$data2[0]['quyen_nd'];
+								// header('Location:index.php');
+								?>
+									<script>location.href = 'index.php';</script>
+								<?php
+							}
+						} elseif (isset($_POST['nutdangky'])) {
+							$tendk = $_POST['tendk'];
+							$emaildk = $_POST['emaildk'];
+							$mkdk = $_POST['mkdk'];
+
+							$this->model->dangky($tendk, $emaildk, $mkdk);
+
+							// auto sign
+							$dem1=$this->model->dembanghi($tendk,$mkdk);
+							$data2=$this->model->kiemtradangnhap($tendk,$mkdk);
+							
+							$_SESSION['tennd']=$tendk;
 							$_SESSION['quyennd']=$data2[0]['quyen_nd'];
-							// header('Location:index.php');
 							?>
 								<script>location.href = 'index.php';</script>
 							<?php
 						}
-					}
-					break;
+						break;
+					
+						
+			
+					
 
 				// page products
 				case 'sanpham':

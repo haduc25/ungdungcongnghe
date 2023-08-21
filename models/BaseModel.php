@@ -106,5 +106,15 @@ class BaseModel
 		$this->connect->query($sql);
 	}
 
+	public function dangky($tendk, $emaildk, $mkdk) {
+		$quyen_nd = 2; // Mặc định là quyền người dùng thông thường
+	
+		$sql = "INSERT INTO quanlynguoidung (ten_nd, email_nd, matkhau_nd, quyen_nd) VALUES ('$tendk', '$emaildk', '$mkdk', '$quyen_nd')";
+		$this->connect->query($sql);
+		// Xử lý lỗi và trường hợp tên người dùng bị trùng (nếu cần)
+	}
+	
+	
+
 }
 ?>

@@ -35,10 +35,10 @@
                                 <a href="">Quên mật khẩu?</a>
                             </form>
                             
-                            <form id="RegForm">
-                                <input type="text" placeholder="username">
-                                <input type="email" placeholder="email">
-                                <input type="password" placeholder="password">
+                            <form id="RegForm" method="post">
+                                <input type="text" placeholder="username" name="tendk">
+                                <input type="email" placeholder="email" name="emaildk">
+                                <input type="password" placeholder="password" name="mkdk">
                                 <button type="submit" class="btn" name="nutdangky">Đăng ký</button>
                             </form>
                         </div>
@@ -84,7 +84,7 @@
                 LoginForm.style.transform="translateX(300px)";
                 Indicator.style.transform="translateX(0px)";
             }
-            login();
+            // login();
         </script>
 </body>
 </html>
