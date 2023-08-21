@@ -45,6 +45,6 @@ if (isset($_POST['nutdx'])) {
 
 		</ul>
 	</nav>
-	<a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+	<a href="index.php?action=giohang"><img src="images/cart.png" width="30px" height="30px"></a>
 	<img src="images/menu.png" class="menu-icon" onClick="menutoggle()">
 </div>
