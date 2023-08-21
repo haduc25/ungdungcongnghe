@@ -47,8 +47,18 @@ class SanphamController
 					include_once('views/sanpham.php');
 					break;
 
+				// page products detail
+				case 'chitietsanpham':
+					$data = $this->model->layloaisanpham();
+					$data1 = $this->model->laysanpham();
+					if (isset($_GET['idloai'])) {
+						$data2 = $this->model->laysanphamtheoidloai($_GET['idloai']);
+					}
+					include_once('views/chitietsanpham.php');
+					break;
 
-				// page products
+
+				// page cart
 				case 'giohang':
 					$data = $this->model->layloaisanpham();
 					$data1 = $this->model->laysanpham();

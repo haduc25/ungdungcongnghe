@@ -14,7 +14,6 @@
         </div>
     
     <!-- body -->
-    <!--</div>-->
     
         
         <!------------------------------ cart items details------------------------------>
@@ -79,7 +78,6 @@
                 </table>
             </div>
         </div>
-    </div>
     <?php
     // footer
     require_once './utils/footer.php';

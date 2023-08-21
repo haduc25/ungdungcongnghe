@@ -18,7 +18,7 @@
                 <div class="footer-col-3">
                     <h3>Useful Links</h3>
                    <ul>
-                       <li>Giới thiệu về chúng tôi</li>
+                       <li>Giới thiệu</li>
                        <li>Phiếu giảm giá</li>
                        <li>Bài viết trên blog</li>
                        <li>Chính sách đổi trả</li>

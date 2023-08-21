@@ -58,8 +58,8 @@
 										
 									?>
                                         <div class="col-4">
-                                            <a href="products-details.html"><img src="<?php echo $value['hinhanh_sp'];?>" alt="..."></a>
-                                            <a href="products-details.html"><h4><?php echo $value['ten_sp'];?></h4></a>
+                                            <a href="index.php?action=chitietsanpham"><img src="<?php echo $value['hinhanh_sp'];?>" alt="..."></a>
+                                            <a href="index.php?action=chitietsanpham"><h4><?php echo $value['ten_sp'];?></h4></a>
                                             <div class="rating">
                                                 
                                                 <i class="fa fa-star" ></i>
@@ -85,9 +85,9 @@
 										 <!-- <div class="col-4 products-item"> -->
 										 <div class="col-4 product-shadow__hover">
                                             <div class="products-item">
-                                                <a href="products-details.html"><img src="<?php echo $value['hinhanh_sp'];?>" alt="..."></a>
+                                                <a href="index.php?action=chitietsanpham"><img src="<?php echo $value['hinhanh_sp'];?>" alt="..."></a>
                                                 <div class="product-item__info">
-                                                    <a href="products-details.html"><h4 class="product-item__title"><?php echo $value['ten_sp'];?></h4></a>
+                                                    <a href="index.php?action=chitietsanpham"><h4 class="product-item__title"><?php echo $value['ten_sp'];?></h4></a>
                                                     <div class="rating">
                                                         <i class="fa fa-star" ></i>
                                                         <i class="fa fa-star" ></i>
@@ -116,9 +116,9 @@
                             ?>
                             <div class="col-4 product-shadow__hover">
                                 <div class="products-item">
-                                    <a href="products-details.html"><img src="images/product-<?=$i+1?>.jpg" alt="..."></a>
+                                    <a href="index.php?action=chitietsanpham"><img src="images/product-<?=$i+1?>.jpg" alt="..."></a>
                                     <div class="product-item__info">
-                                        <a href="products-details.html"><h4 class="product-item__title"><?php echo $value['ten_sp'];?></h4></a>
+                                        <a href="index.php?action=chitietsanpham"><h4 class="product-item__title"><?php echo $value['ten_sp'];?></h4></a>
                                         <div class="rating">
                                             <i class="fa fa-star" ></i>
                                             <i class="fa fa-star" ></i>
