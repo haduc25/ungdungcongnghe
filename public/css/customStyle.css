@@ -2,6 +2,7 @@
     --text-color: #333;
     --white-color: #fff;
     --primary-color: #ff523b;
+    --primary-color-hover: #ff523bb5;
 }
 
 .nav-link__active {
@@ -40,15 +41,43 @@
 
 .btn-loaisp{
     min-width: 90px;
-    margin-right: 12px;
+    margin-right: 24px;
     background-color: var(--white-color);
     box-shadow: 0 1px 2px #00000042;
     color: var(--white-color);
     background-color: var(--primary-color);
 }
 
+.btn-loaisp:hover{
+    background-color: var(--primary-color-hover);
+}
+
 
 /* pages - products - item */
 .products-item{
     box-shadow: 0 1px 2px #00000042;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.product-item__info{
+    padding: 20px;
+}
+
+.product-shadow__hover:hover .products-item{
+    box-shadow: 0 3px 8px #00000066;
+}
+
+.product-item__title{
+    font-weight: 600;
+}
+
+.product-item__price{
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.page-btn__active{
+    color: var(--white-color);
+    background-color: var(--primary-color);
 }
