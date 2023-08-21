@@ -97,8 +97,7 @@
             
             
              <h2 class="title" >Sản phẩm mới nhất</h2>
-                <div class="row">
-                    <?php 
+                <div class="row"><?php 
                         if (isset($_GET['idloai'])) {
 							if($data2==0){
 									echo "Đang cập nhật";
@@ -153,9 +152,10 @@
 								}
 						}
 
-                    ?>
-                     
+                    ?> 
                 </div>
+            <!--new row for the latest product-->
+            </div>
         
         <!--------------------------`   offer   --------------------------------->
         <div class="offer">
@@ -191,7 +191,7 @@
                             <i class="fa fa-star-o" ></i>
                         </div>
                         <img src="images/user-1.png">
-                        <h3>Lan Anh</h3>
+                        <h3>Sean Parkar</h3>
                     </div>
                     <div class="col-3">
                         <i class="fa fa-quote-left" ></i>
@@ -204,7 +204,7 @@
                             <i class="fa fa-star-o" ></i>
                         </div>
                         <img src="images/user-2.png">
-                        <h3>Do Tu</h3>
+                        <h3>Mike Smith</h3>
                     </div>
                     <div class="col-3">
                         <i class="fa fa-quote-left" ></i>
@@ -217,7 +217,7 @@
                             <i class="fa fa-star-o" ></i>
                         </div>
                         <img src="images/user-3.png">
-                        <h3>Thuy Linh</h3>
+                        <h3>Mabel Joe</h3>
                     </div>
                 </div>
             </div>
