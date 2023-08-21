@@ -28,7 +28,7 @@
             
             <!-- Phân loại sản phẩm -->
             <div class="row pd-50">
-            <div class="col-2">
+            <div class="col">
 
                 <nav class="nav flex-column">
                     <?php
@@ -118,7 +118,7 @@
                                 <div class="products-item">
                                     <a href="index.php?action=chitietsanpham"><img src="images/product-<?=$i+1?>.jpg" alt="..."></a>
                                     <div class="product-item__info">
-                                        <a href="index.php?action=chitietsanpham"><h4 class="product-item__title"><?php echo $value['ten_sp'];?></h4></a>
+                                        <a href="index.php?action=chitietsanpham"><h4 class="product-item__title">Giầy quảng châu <?=$i+1?></h4></a>
                                         <div class="rating">
                                             <i class="fa fa-star" ></i>
                                             <i class="fa fa-star" ></i>
@@ -126,7 +126,7 @@
                                             <i class="fa fa-star-half-o" ></i>
                                             <i class="fa fa-star-o" ></i>
                                         </div>
-                                        <p class="product-item__price" class="product-item__price"><?php echo number_format($value['gia_sp'], 0, ',', '.');?>đ</p>
+                                        <p class="product-item__price" class="product-item__price">1.000đ</p>
                                     </div>
                                 </div>
                             </div>

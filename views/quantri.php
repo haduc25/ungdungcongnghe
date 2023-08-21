@@ -1,7 +1,13 @@
 <?php
-if (isset($_POST['nutdx'])) {
-	session_unset();
-}
+    // set page title
+    $pageTitle = "Quản trị - LeoPard";
+
+    // header
+    // require_once './utils/header.php';
+
+	if (isset($_POST['nutdx'])) {
+		session_unset();
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,12 +21,12 @@ if (isset($_POST['nutdx'])) {
 	<div class="container">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	  <div class="container-fluid row">
-	    <a class="navbar-brand col-4" href="#">Mạng K17</a>
+	    <a class="navbar-brand col-4" href="#">LeoPard Store</a>
 	    
 	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	      <ul class="navbar-nav me-auto mb-0 mb-lg-0">
 	        <li class="nav-item">
-	          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+	          <a class="nav-link active" aria-current="page" href="index.php">Trang chủ</a>
 	        </li>
 	        <li class="nav-item">
 
