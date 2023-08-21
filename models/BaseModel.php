@@ -101,5 +101,10 @@ class BaseModel
 		$sql = "update sanpham set ten_sp='".$ten."',hinhanh_sp='".$link_ha."',gia_sp='".$gia."',ngaynhap_sp='".$ngay."',id_loaisp='".$id_l."',mota_sp='".$mota."' where id_sp='".$id_sua."'";
 		$this->connect->query($sql);
 	}
+	public function xoasanpham($id_xoa){
+		$sql = "DELETE FROM sanpham WHERE id_sp = '".$id_xoa."'";
+		$this->connect->query($sql);
+	}
+
 }
 ?>

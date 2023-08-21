@@ -248,7 +248,7 @@ if (isset($_POST['nutdx'])) {
                             <i class="fa fa-star-o" ></i>
                         </div>
                         <img src="images/user-1.png">
-                        <h3>Sean Parkar</h3>
+                        <h3>Lan Anh</h3>
                     </div>
                     <div class="col-3">
                         <i class="fa fa-quote-left" ></i>
@@ -261,7 +261,7 @@ if (isset($_POST['nutdx'])) {
                             <i class="fa fa-star-o" ></i>
                         </div>
                         <img src="images/user-2.png">
-                        <h3>Mike Smith</h3>
+                        <h3>Do Tu</h3>
                     </div>
                     <div class="col-3">
                         <i class="fa fa-quote-left" ></i>
@@ -274,7 +274,7 @@ if (isset($_POST['nutdx'])) {
                             <i class="fa fa-star-o" ></i>
                         </div>
                         <img src="images/user-3.png">
-                        <h3>Mabel Joe</h3>
+                        <h3>Thuy Linh</h3>
                     </div>
                 </div>
             </div>

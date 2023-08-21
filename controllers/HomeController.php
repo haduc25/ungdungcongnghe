@@ -84,9 +84,8 @@ class SanphamController
 						$this->model->themsanpham($t,$l,$g,$n,$li,$m);
 						header('Location: index.php?action=quantri');
 					}
-					
-					
 					break;
+
 				case 'quantri':
 					$data = $this->model->layloaisanpham();
 					$data1 = $this->model->laysanpham();
@@ -121,8 +120,16 @@ class SanphamController
 						}
 					}
 					break;
+
+					case 'xoasanpham':
+						if (isset($_GET['id_xoa'])) {
+							$id_xoa = $_GET['id_xoa'];
+							$this->model->xoasanpham($id_xoa);
+							header('Location: index.php?action=quantri');
+						}
+						break;
+
 				default:
-					
 					break;
 			}
 		}else{

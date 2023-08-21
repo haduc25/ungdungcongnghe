@@ -98,109 +98,64 @@
             
              <h2 class="title" >Sản phẩm mới nhất</h2>
                 <div class="row">
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-5.jpg"></a>
-                        <h4>Giày đế bệt màu xám</h4>
-                        <div class="rating">
-                            <!--(before this added awesome4 cdn font link to the head)added a cdn link by searching font awesome4 icon and from the site  search the star entering the first option and getting a link of this fa-star*-->
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>$50.00</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-3.jpg"></a>
-                        <h4>Giày buộc dây màu đen</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                        </div>
-                        <p>$21.00</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-7.jpg"></a>
-                        <h4>Vớ cotton nam HRX</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>$09.00</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-2.jpg"></a>
-                        <h4>Giày chạy bộ buộc dây</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>$35.00</p>
-                    </div>  
+                    <?php 
+                        if (isset($_GET['idloai'])) {
+							if($data2==0){
+									echo "Đang cập nhật";
+								}else{
+									foreach ($data2 as $value) {
+										
+									?>
+                                        <div class="col-4">
+                                            <a href="index.php?action=chitietsanpham"><img src="<?php echo $value['hinhanh_sp'];?>" alt="..."></a>
+                                            <a href="index.php?action=chitietsanpham"><h4><?php echo $value['ten_sp'];?></h4></a>
+                                            <div class="rating">
+                                                
+                                                <i class="fa fa-star" ></i>
+                                                <i class="fa fa-star" ></i>
+                                                <i class="fa fa-star" ></i>
+                                                <i class="fa fa-star-half-o" ></i>
+                                                <i class="fa fa-star-o" ></i>
+                                            </div>
+                                            <p><?php echo $value['gia_sp'];?> VND</p>
+                                            <a href="#" class="btn btn-primary">Mua hàng</a>
+                                        </div>
+									<?php
+									}
+								}
+						}
+						else{
+							if($data1==0){
+									echo "Đang cập nhật";
+								}else{
+									foreach ($data1 as $value) {
+
+									?>
+										 <!-- <div class="col-4 products-item"> -->
+										 <div class="col-4 product-shadow__hover">
+                                            <div class="products-item">
+                                                <a href="index.php?action=chitietsanpham"><img src="<?php echo $value['hinhanh_sp'];?>" alt="..."></a>
+                                                <div class="product-item__info">
+                                                    <a href="index.php?action=chitietsanpham"><h4 class="product-item__title"><?php echo $value['ten_sp'];?></h4></a>
+                                                    <div class="rating">
+                                                        <i class="fa fa-star" ></i>
+                                                        <i class="fa fa-star" ></i>
+                                                        <i class="fa fa-star" ></i>
+                                                        <i class="fa fa-star-half-o" ></i>
+                                                        <i class="fa fa-star-o" ></i>
+                                                    </div>
+                                                    <p class="product-item__price" class="product-item__price"><?php echo number_format($value['gia_sp'], 0, ',', '.');?>đ</p>
+                                                </div>
+                                            </div>
+                                        </div>
+									<?php
+									}
+								}
+						}
+
+                    ?>
+                     
                 </div>
-            <!--new row for the latest product-->
-                <div class="row">
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-7.jpg"></a>
-                        <h4>Vớ cotton HRX</h4>
-                        <div class="rating">
-                            <!--(before this added awesome4 cdn font link to the head)added a cdn link by searching font awesome4 icon and from the site  search the star entering the first option and getting a link of this fa-star*-->
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>$10.00</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-10.jpg"></a>
-                        <h4>Giày buộc dây phẳng</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                        </div>
-                        <p>$48.00</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-11.jpg"></a>
-                        <h4>Giày Lười Nam (Xám)</h4>
-                        <div class="rating">
-                            <i class="fa fa-star-o" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>$15.00</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-12.jpg"></a>
-                        <h4>Giày trắng buộc dây</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>$21.00</p>
-                    </div>  
-                </div>
-            </div>
         
         <!--------------------------`   offer   --------------------------------->
         <div class="offer">
@@ -236,7 +191,7 @@
                             <i class="fa fa-star-o" ></i>
                         </div>
                         <img src="images/user-1.png">
-                        <h3>Sean Parkar</h3>
+                        <h3>Lan Anh</h3>
                     </div>
                     <div class="col-3">
                         <i class="fa fa-quote-left" ></i>
@@ -249,7 +204,7 @@
                             <i class="fa fa-star-o" ></i>
                         </div>
                         <img src="images/user-2.png">
-                        <h3>Mike Smith</h3>
+                        <h3>Do Tu</h3>
                     </div>
                     <div class="col-3">
                         <i class="fa fa-quote-left" ></i>
@@ -262,7 +217,7 @@
                             <i class="fa fa-star-o" ></i>
                         </div>
                         <img src="images/user-3.png">
-                        <h3>Mabel Joe</h3>
+                        <h3>Thuy Linh</h3>
                     </div>
                 </div>
             </div>

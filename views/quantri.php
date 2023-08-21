@@ -21,7 +21,7 @@
 	<div class="container">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	  <div class="container-fluid row">
-	    <a class="navbar-brand col-4" href="#">LeoPard Store</a>
+	    <a class="navbar-brand col-4" href="http://localhost/ungdungcongnghe/shoe_store">LeoPard Store</a>
 	    
 	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	      <ul class="navbar-nav me-auto mb-0 mb-lg-0">
@@ -149,7 +149,8 @@
 									      <td><?php echo $value['ten_loaisp'];?></td>
 									      <td><?php echo $value['mota_sp'];?></td>
 									      
-									      <td><a href="index.php?action=sua&id_sua=<?php echo $value['id_sp'];?>">Sửa</a>/<a href="#">Xóa</a></td>
+									      <td>
+											<a href="index.php?action=sua&id_sua=<?php echo $value['id_sp'];?>">Sửa</a>/<a href="index.php?action=xoasanpham&id_xoa=<?php echo $value['id_sp']; ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');">Xóa</a></td>
 									    </tr>
 									<?php
 									}

@@ -118,6 +118,8 @@ p{
 }
 .col-4 img{
     width:100%;
+    object-fit: contain;
+    height: 250px;
 }
 .title{
     font-family: var(--title-font);
