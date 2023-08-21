@@ -34,7 +34,26 @@ class SanphamController
 							<?php
 						}
 					}
-					
+					break;
+						
+				case 'dangky':
+					include_once('views/dangnhap.php');
+					if (isset($_POST['nutdangky'])) {
+						$t=$_POST['tdn'];
+						$m=$_POST['mk'];
+						$dem1=$this->model->dembanghi($t,$m);
+						$data2=$this->model->kiemtradangnhap($t,$m);
+						if ($dem1 == 0) {
+							echo "Đăng nhập thất bại";
+						}else{
+							$_SESSION['tennd']=$t;
+							$_SESSION['quyennd']=$data2[0]['quyen_nd'];
+							// header('Location:index.php');
+							?>
+								<script>location.href = 'index.php';</script>
+							<?php
+						}
+					}
 					break;
 
 				// page products

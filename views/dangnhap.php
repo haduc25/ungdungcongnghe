@@ -39,7 +39,7 @@
                                 <input type="text" placeholder="username">
                                 <input type="email" placeholder="email">
                                 <input type="password" placeholder="password">
-                                <button type="submit" class="btn">Đăng ký</button>
+                                <button type="submit" class="btn" name="nutdangky">Đăng ký</button>
                             </form>
                         </div>
                     </div>
