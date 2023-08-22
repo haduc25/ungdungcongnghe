@@ -5,14 +5,14 @@ if (isset($_POST['nutdx'])) {
 ?>
 <div class="navbar">
 	<div class="logo">
-		<a href="http://localhost/ungdungcongnghe/shoe_store"><img src="images/logo.png" width="185px"></a>
+		<a href="./"><img src="images/logo.png" width="185px"></a>
 	</div>
 	<nav>
 		<ul id="MenuItems" class="menu-items">
-			<li><a href="http://localhost/ungdungcongnghe/shoe_store">Trang chủ</a></li>
+			<li><a href="./">Trang chủ</a></li>
 			<li><a href="index.php?action=sanpham">Sản phẩm</a></li>
-			<li><a href="">Giới thiệu</a></li>
-			<li><a href="">Liên hệ</a></li>
+			<li><a href="index.php?action=gioithieu">Giới thiệu</a></li>
+			<li><a href="index.php?action=lienhe">Liên hệ</a></li>
 			<li> <?php
 					if (isset($_SESSION['tennd'])) {
 						if ($_SESSION['quyennd'] == 1) {

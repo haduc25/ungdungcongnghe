@@ -21,7 +21,7 @@
 	<div class="container">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	  <div class="container-fluid row">
-	    <a class="navbar-brand col-4" href="http://localhost/ungdungcongnghe/shoe_store">LeoPard Store</a>
+	    <a class="navbar-brand col-4" href="./">LeoPard Store</a>
 	    
 	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	      <ul class="navbar-nav me-auto mb-0 mb-lg-0">

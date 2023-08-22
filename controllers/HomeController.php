@@ -86,6 +86,15 @@ class SanphamController
 					include_once('views/sanpham.php');
 					break;
 
+				// page gioithieu
+				case 'gioithieu':
+					include_once('views/gioithieu.php');
+					break;
+
+				// page lienhe
+				case 'lienhe':
+					include_once('views/lienhe.php');
+					break;
 				// page products detail
 				case 'chitietsanpham':
 					$data = $this->model->layloaisanpham();
