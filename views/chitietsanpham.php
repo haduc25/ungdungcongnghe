@@ -4,6 +4,9 @@
 
     // header
     require_once './utils/header.php';
+
+    // connect sql
+    require_once './utils/connect_sql.php';
 ?>
 
 <body>
@@ -23,29 +26,14 @@
             <!--<h2 class="title" >Sản phẩm nổi bật</h2>-->
             <div class="row">
                     <div class="col-2">
-                        <img src="images/product-11.jpg" width="100%" id="productImg">
+                        <img src="<?=$proInfo['hinhanh_sp']?>" width="100%" id="productImg">
                         
-                        
-                        <div class="small-img-row">
-                            <div class="small-img-col">
-                                <img src="images/product-11.jpg" width="100%" class="small-img">
-                            </div>
-                             <div class="small-img-col">
-                                <img src="images/product-5.jpg" width="100%" class="small-img">
-                            </div>
-                             <div class="small-img-col">
-                                <img src="images/product-11.jpg" width="100%" class="small-img">
-                            </div>
-                             <div class="small-img-col">
-                                <img src="images/product-5.jpg" width="100%" class="small-img">
-                            </div>
-                        </div>
                     </div>
-                
+                <?php $soluong =1 ?>
                     <div class="col-2">
                         <p>Trang chủ / Shoes</p>
-                        <h1>Giày thể thao Downshifter</h1>
-                        <h4>500.000đ</h4>
+                        <h1><?=$proInfo['ten_sp'];?></h1>
+                        <h4><?= number_format($proInfo['gia_sp'], 0, ",", ".") ?> </h4>
                         <select>
                             <option>Select Size</option>
                             <option>6<!--Small (s)--></option>
@@ -54,11 +42,11 @@
                             <option>9<!--XL--></option>
                             <option>10<!--XXL--></option>
                         </select>
-                        <input type="number" value="1">
-                        <a href="index.php?action=giohang" class="btn">Thêm vào giỏ hàng</a>
+                        <input type="number" value="<?=$soluong?>">
+                        <a href="index.php?action=giohang&id=<?=$proInfo['id_sp']?>&sl=<?=$soluong?>" class="btn">Thêm vào giỏ hàng</a>
                         <h3>Chi tiết sản phẩm <i class="fa fa-indent" ></i></h3>
                         <br>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                        <p><?=$proInfo['mota_sp']?></p>
                     </div>
                 </div>
             </div>

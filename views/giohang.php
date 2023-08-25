@@ -4,6 +4,13 @@
 
     // header
     require_once './utils/header.php';
+
+    require_once './utils/connect_sql.php';
+
+
+
+
+
 ?>
 
 <body>
@@ -19,7 +26,12 @@
         <!------------------------------ cart items details------------------------------>
 
         <div class="small-container cart-page">
-        <table>
+        <?php
+    if(isset($_GET['sl']) && isset($_GET['id'])){
+        $soluongsp = $_GET['sl'];
+        $giasp = $proInfo['gia_sp'];
+            ?>
+            <table>
             <tr>
                 <th>Sản phẩm</th>
                 <th>Số lượng</th>
@@ -28,47 +40,19 @@
             <tr>
                 <td>
                     <div class="cart-info">
-                        <img src="images/buy-1.jpg">
+                        <img src="<?=$proInfo['hinhanh_sp']?>" width="100%" id="productImg">
                         <div>
-                            <p>Red Printed T-Shirt</p>
-                            <small>giá: 50.00đ</small><br>
+                            <p><?=$proInfo['ten_sp'];?></p>
+                            <small><?= number_format($giasp, 0, ",", ".") ?></small><br>
                             <a href="">Xoá</a>
                         </div>
                     </div>
                 </td>
-                <td><input type="number" value="1"></td>
-                <td>50.00đ</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="images/buy-2.jpg">
-                        <div>
-                            <p>Red Printed T-Shirt</p>
-                            <small>giá: 50.00đ</small><br>
-                            <a href="">Xoá</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1"></td>
-                <td>50.00đ</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="images/buy-3.jpg">
-                        <div>
-                            <p>Red Printed T-Shirt</p>
-                            <small>giá: 50.00đ</small><br>
-                            <a href="">Xoá</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1"></td>
-                <td>50.00đ</td>
+                <td><input type="number" value="<?=$soluongsp?>"></td>
+                <?php $tt1 = $giasp * $soluongsp; ?>
+                <td><?= number_format( $tt1 ,0, ",", ".") ?> đ</td>
             </tr>
             </table>
-            
             <div class="total-price">
                 <table>
                     <tr>
@@ -77,6 +61,18 @@
                     </tr>
                 </table>
             </div>
+            <?php
+        }
+        else{
+            ?>
+            <div style="height: 200px;">
+                <h2 style="text-align: center;">Khong co san pham nao trong gio hang</h2>
+            </div>
+            <?php
+        }
+        ?>
+            
+            
         </div>
     <?php
     // footer

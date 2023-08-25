@@ -54,24 +54,27 @@
 									echo "Đang cập nhật";
 								}else{
 									foreach ($data2 as $value) {
-										
-									?>
-                                        <div class="col-4">
-                                            <a href="index.php?action=chitietsanpham"><img src="<?php echo $value['hinhanh_sp'];?>" alt="..."></a>
-                                            <a href="index.php?action=chitietsanpham"><h4><?php echo $value['ten_sp'];?></h4></a>
-                                            <div class="rating">
-                                                
-                                                <i class="fa fa-star" ></i>
-                                                <i class="fa fa-star" ></i>
-                                                <i class="fa fa-star" ></i>
-                                                <i class="fa fa-star-half-o" ></i>
-                                                <i class="fa fa-star-o" ></i>
+
+                                        ?>
+                                             <!-- <div class="col-4 products-item"> -->
+                                             <div class="col-4 product-shadow__hover">
+                                                <div class="products-item">
+                                                    <a href="index.php?action=chitietsanpham&id=<?=$value['id_sp']; ?>"><img src="<?php echo $value['hinhanh_sp'];?>" alt="..."></a>
+                                                    <div class="product-item__info">
+                                                        <a href="index.php?action=chitietsanpham&id=<?=$value['id_sp']; ?>"><h4 class="product-item__title"><?php echo $value['ten_sp'];?></h4></a>
+                                                        <div class="rating">
+                                                            <i class="fa fa-star" ></i>
+                                                            <i class="fa fa-star" ></i>
+                                                            <i class="fa fa-star" ></i>
+                                                            <i class="fa fa-star-half-o" ></i>
+                                                            <i class="fa fa-star-o" ></i>
+                                                        </div>
+                                                        <p class="product-item__price" class="product-item__price"><?php echo number_format($value['gia_sp'], 0, ',', '.');?>đ</p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <p><?php echo $value['gia_sp'];?> VND</p>
-                                            <a href="#" class="btn btn-primary">Mua hàng</a>
-                                        </div>
-									<?php
-									}
+                                        <?php
+                                        }
 								}
 						}
 						else{
