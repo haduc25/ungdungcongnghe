@@ -55,7 +55,7 @@
                             <i class="fa fa-star-half-o" ></i>
                             <i class="fa fa-star-o" ></i>
                         </div>
-                        <p>$50.00</p>
+                        <p>50.000đ</p>
                     </div>
                     <div class="col-4">
                         <a href="products-details.html"><img src="images/product-2.jpg"></a>
@@ -67,7 +67,7 @@
                             <i class="fa fa-star" ></i>
                             <i class="fa fa-star-half-o" ></i>
                         </div>
-                        <p>$35.00</p>
+                        <p>35.000đ</p>
                     </div>
                     <div class="col-4">
                         <a href="products-details.html"><img src="images/product-3.jpg"></a>
@@ -79,7 +79,7 @@
                             <i class="fa fa-star" ></i>
                             <i class="fa fa-star-o" ></i>
                         </div>
-                        <p>$15.00</p>
+                        <p>15.000đ</p>
                     </div>
                     <div class="col-4">
                         <a href="products-details.html"><img src="images/product-10.jpg"></a>
@@ -91,7 +91,7 @@
                             <i class="fa fa-star-o" ></i>
                             <i class="fa fa-star-o" ></i>
                         </div>
-                        <p>$48.00</p>
+                        <p>48.000đ</p>
                     </div>  
                 </div>
             
@@ -191,7 +191,7 @@
                             <i class="fa fa-star-o" ></i>
                         </div>
                         <img src="images/user-1.png">
-                        <h3>Sean Parkar</h3>
+                        <h3>Ngoc Anh</h3>
                     </div>
                     <div class="col-3">
                         <i class="fa fa-quote-left" ></i>
@@ -204,7 +204,7 @@
                             <i class="fa fa-star-o" ></i>
                         </div>
                         <img src="images/user-2.png">
-                        <h3>Mike Smith</h3>
+                        <h3>Nam Hai</h3>
                     </div>
                     <div class="col-3">
                         <i class="fa fa-quote-left" ></i>
@@ -217,7 +217,7 @@
                             <i class="fa fa-star-o" ></i>
                         </div>
                         <img src="images/user-3.png">
-                        <h3>Mabel Joe</h3>
+                        <h3>Thuy Linh</h3>
                     </div>
                 </div>
             </div>

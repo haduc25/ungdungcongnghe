@@ -30,7 +30,7 @@
                             <i class="fa fa-star-half-o" ></i>
                             <i class="fa fa-star-o" ></i>
                         </div>
-                        <p>$50.00</p>
+                        <p>50.000đ</p>
                     </div>
                     <div class="col-4">
                         <a href="products-details.html"><img src="images/product-2.jpg"></a>
@@ -42,7 +42,7 @@
                             <i class="fa fa-star" ></i>
                             <i class="fa fa-star-half-o" ></i>
                         </div>
-                        <p>$35.00</p>
+                        <p>35.000đ</p>
                     </div>
                     <div class="col-4">
                         <a href="products-details.html"><img src="images/product-3.jpg"></a>
@@ -54,7 +54,7 @@
                             <i class="fa fa-star" ></i>
                             <i class="fa fa-star-o" ></i>
                         </div>
-                        <p>$15.00</p>
+                        <p>15.000đ</p>
                     </div>
                     <div class="col-4">
                         <a href="products-details.html"><img src="images/product-10.jpg"></a>
@@ -66,7 +66,7 @@
                             <i class="fa fa-star-o" ></i>
                             <i class="fa fa-star-o" ></i>
                         </div>
-                        <p>$48.00</p>
+                        <p>48.000đ</p>
                     </div>  
                 </div>
             
@@ -84,7 +84,7 @@
                             <i class="fa fa-star-half-o" ></i>
                             <i class="fa fa-star-o" ></i>
                         </div>
-                        <p>$50.00</p>
+                        <p>50.000đ</p>
                     </div>
                     <div class="col-4">
                         <a href="products-details.html"><img src="images/product-3.jpg"></a>
@@ -120,7 +120,7 @@
                             <i class="fa fa-star-o" ></i>
                             <i class="fa fa-star-o" ></i>
                         </div>
-                        <p>$35.00</p>
+                        <p>35.000đ</p>
                     </div>  
                 </div>
             <!--new row for the latest product-->
@@ -148,7 +148,7 @@
                             <i class="fa fa-star" ></i>
                             <i class="fa fa-star-half-o" ></i>
                         </div>
-                        <p>$48.00</p>
+                        <p>48.000đ</p>
                     </div>
                     <div class="col-4">
                         <a href="products-details.html"><img src="images/product-11.jpg"></a>
@@ -160,7 +160,7 @@
                             <i class="fa fa-star" ></i>
                             <i class="fa fa-star-o" ></i>
                         </div>
-                        <p>$15.00</p>
+                        <p>15.000đ</p>
                     </div>
                     <div class="col-4">
                         <a href="products-details.html"><img src="images/product-12.jpg"></a>
