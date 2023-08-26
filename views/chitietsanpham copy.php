@@ -51,11 +51,10 @@
                             <input type="number" min="1" value="<?=$soluong?>">
                        </div>
 
-                       <form action="views/giohang.php?action=add" method="POST">
-                            <input type="number" min="0" value="1" name="quantity[<?=$proInfo['id_sp']?>]">
-                            <button type="submit" class="btn" style="width: 150px;">Thêm vào giỏ hàng<i class="fas fa-shopping-cart"></i></button>
-                        </form>
-
+                        <form action="views/giohang.php?action=add" method="GET">	 
+                            <input type = "number" min = "0" value = "1" name="quantity[<?=$proInfo['id_sp']?>]">
+                            <button type="submit" class= "btn" style="width: 150px;">Thêm vào giỏ hàng<i class = "fas fa-shopping-cart"></i></button>
+					    </form>
 
                         <h3>Chi tiết sản phẩm <i class="fa fa-indent" ></i></h3>
                         <br>

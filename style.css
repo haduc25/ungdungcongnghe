@@ -419,6 +419,7 @@ input:focus{
         /*------------------------------ cart items ------------------------------*/
 .cart-page{
     margin: 80px auto;
+    min-height: 200px;
 }
 
 table{
