@@ -18,16 +18,22 @@ if (isset($_POST['nutdx'])) {
 						if ($_SESSION['quyennd'] == 1) {
 					?>
 			<li><a class="nav-link active" aria-current="page" href="index.php?action=quantri">Quản trị</a></li>
-			<li>
+			<li class="navbar__user">
 				<a class="nav-link active" aria-current="page" href="#">Xin chào <?php echo $_SESSION['tennd']; ?>
 				</a>
-
-				<!-- nav menu -->
-				<!-- <ul class="navbar__menu">
-					<li class="navbar__men-item"><a href="#">Tài khoản của tôi</a></li>
-					<li class="navbar__men-item"><a href="#">Đơn mua</a></li>
-					<li class="navbar__men-item"><a href="#">Đăng xuất</a></li>
-				</ul> -->
+				<ul class="navbar__user-menu">
+					<li class="navbar__user-menu-item">
+						<a href="https://github.com/haduc25">Tài khoản của tôi</a>
+					</li>
+					<li class="navbar__user-menu-item">
+						<a href="">Đơn mua</a>
+					</li>
+					<li
+						class="navbar__user-menu-item navbar__user-menu-item--separate"
+					>
+						<a href="" id="logout">Đăng xuất</a>
+					</li>
+				</ul>
 			</li>
 			<li>
 				<form method="post"><input class="btn-dangxuat" type="submit" name="nutdx" value="Đăng xuất"></form>
