@@ -66,8 +66,8 @@ class BaseModel
 			}
 		}
 		return $data;
-
 	}
+
 	public function laysanphamtheoidloai($idl){
 		$sql="select * from sanpham,loaisanpham where sanpham.id_loaisp=loaisanpham.id_loaisp and sanpham.id_loaisp=$idl";
 		$this->ketqua=$this->connect->query($sql);
@@ -114,7 +114,43 @@ class BaseModel
 		// Xử lý lỗi và trường hợp tên người dùng bị trùng (nếu cần)
 	}
 	
+	public function laysanphamnoibat(){
+		$sql="SELECT * FROM `sanpham` ORDER BY `sanpham`.`id_loaisp` ASC LIMIT 4";
+		$this->ketqua=$this->connect->query($sql);
+		if ($this->ketqua->num_rows==0) {
+			$data=0;
+		}else{
+			while ($row=$this->ketqua->fetch_assoc()) {
+				$data[]=$row;
+			}
+		}
+		return $data;
+	}
 	
+	public function laysanphammoinhat(){
+		$sql="SELECT * FROM `sanpham` ORDER BY `sanpham`.`ngaynhap_sp` DESC";
+		$this->ketqua=$this->connect->query($sql);
+		if ($this->ketqua->num_rows==0) {
+			$data=0;
+		}else{
+			while ($row=$this->ketqua->fetch_assoc()) {
+				$data[]=$row;
+			}
+		}
+		return $data;
+	}
+	public function laysanphamngaunhien($slsp){
+		$sql="SELECT * FROM sanpham ORDER BY RAND() LIMIT $slsp";
+		$this->ketqua=$this->connect->query($sql);
+		if ($this->ketqua->num_rows==0) {
+			$data=0;
+		}else{
+			while ($row=$this->ketqua->fetch_assoc()) {
+				$data[]=$row;
+			}
+		}
+		return $data;
+	}
 
 }
 ?>

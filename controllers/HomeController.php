@@ -15,29 +15,9 @@ class SanphamController
 	public function dieuhuong(){
 		if (isset($_GET['action'])) {
 			switch ($_GET['action']) {
-						
-				// case 'dangnhap':
-				// 	include_once('views/dangnhap.php');
-				// 	if (isset($_POST['nutdangnhap'])) {
-				// 		$t=$_POST['tdn'];
-				// 		$m=$_POST['mk'];
-				// 		$dem1=$this->model->dembanghi($t,$m);
-				// 		$data2=$this->model->kiemtradangnhap($t,$m);
-				// 		if ($dem1 == 0) {
-				// 			echo "Đăng nhập thất bại";
-				// 		}else{
-				// 			$_SESSION['tennd']=$t;
-				// 			$_SESSION['quyennd']=$data2[0]['quyen_nd'];
-							// header('Location:index.php');
-							
-								//<script>location.href = 'index.php';</script>
-						
-					// 	}
-					// }
-					// break;
-						
-					case 'dangnhap':
-						include_once('views/dangnhap.php');
+
+					case 'taikhoan':
+						include_once('views/taikhoan.php');
 						if (isset($_POST['nutdangnhap'])) {
 							$t=$_POST['tdn'];
 							$m=$_POST['mk'];
@@ -99,6 +79,8 @@ class SanphamController
 				case 'chitietsanpham':
 					$data = $this->model->layloaisanpham();
 					$data1 = $this->model->laysanpham();
+					$spnn = $this->model->laysanphamngaunhien(8);
+
 					if (isset($_GET['idloai'])) {
 						$data2 = $this->model->laysanphamtheoidloai($_GET['idloai']);
 					}
@@ -181,9 +163,12 @@ class SanphamController
 					break;
 			}
 		}else{
-			
 			$data = $this->model->layloaisanpham();
 			$data1 = $this->model->laysanpham();
+
+			$spnoibat = $this->model->laysanphamnoibat();
+			$spmoinhat = $this->model->laysanphammoinhat();
+
 			if (isset($_GET['idloai'])) {
 				$data2 = $this->model->laysanphamtheoidloai($_GET['idloai']);
 			}

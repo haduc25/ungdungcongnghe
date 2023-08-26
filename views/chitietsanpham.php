@@ -27,23 +27,30 @@
             <div class="row">
                     <div class="col-2">
                         <img src="<?=$proInfo['hinhanh_sp']?>" width="100%" id="productImg">
-                        
                     </div>
                 <?php $soluong =1 ?>
                     <div class="col-2">
-                        <p>Trang chủ / Shoes</p>
+                        <p><a href="./">Trang chủ</a> / <a href="index.php?action=sanpham">Shoes</a></p>
                         <h1><?=$proInfo['ten_sp'];?></h1>
-                        <h4><?= number_format($proInfo['gia_sp'], 0, ",", ".") ?> </h4>
-                        <select>
-                            <option>Select Size</option>
-                            <option>6<!--Small (s)--></option>
-                            <option>7<!--Medium (M)--></option>
-                            <option>8<!--Large (L)--></option>
-                            <option>9<!--XL--></option>
-                            <option>10<!--XXL--></option>
-                        </select>
-                        <input type="number" value="<?=$soluong?>">
-                        <a href="index.php?action=giohang&id=<?=$proInfo['id_sp']?>&sl=<?=$soluong?>" class="btn">Thêm vào giỏ hàng</a>
+                        <h4><?= number_format($proInfo['gia_sp'], 0, ",", ".") ?>đ</h4>
+                        <div class="products__size">
+                            <h5>Kích thước</h5>
+                            <select>
+                                <option>36</option>
+                                <option>37</option>
+                                <option>38</option>
+                                <option>39</option>
+                                <option>40</option>
+                                <option>41</option>
+                                <option>42</option>
+                                <option>43</option>
+                            </select>
+                        </div>
+                        <div class="products__soluong">
+                            <h5>Số lượng</h5>
+                            <input type="number" value="<?=$soluong?>">
+                       </div>
+                        <a href="index.php?action=giohang&id=<?=$proInfo['id_sp']?>&sl=<?=$soluong?>" class="btn btn__addcart">Thêm vào giỏ hàng</a>
                         <h3>Chi tiết sản phẩm <i class="fa fa-indent" ></i></h3>
                         <br>
                         <p><?=$proInfo['mota_sp']?></p>
@@ -63,55 +70,43 @@
         <!----------------------------------products------------------------------------->
         <div class="small-container">
              <div class="row">
-                     <div class="col-4">
-                        <a href="index.php?action=chitietsanpham"><img src="images/product-11.jpg"></a>
-                        <a href="index.php?action=chitietsanpham"><h4>Giày thể thao Downshifter</h4></a>
-                        <div class="rating">
-                            
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>50.000đ</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="index.php?action=chitietsanpham"><img src="images/product-2.jpg"></a>
-                        <h4>Giày chạy bộ buộc dây</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                        </div>
-                        <p>35.000đ</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="index.php?action=chitietsanpham"><img src="images/product-3.jpg"></a>
-                        <h4>Giày buộc dây</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>15.000đ</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="index.php?action=chitietsanpham"><img src="images/product-10.jpg"></a>
-                        <h4>Giày buộc dây phẳng</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>48.000đ</p>
-                    </div>  
+             <?php 
+                        if($spnn==0){
+                                echo "Đang cập nhật";
+                            }else{
+                                foreach ($spnn as $value) {
+                                ?>
+                                        <div class="col-4 product-shadow__hover">
+                                        <div class="products-item" style="overflow: unset">
+                                            <a href="index.php?action=chitietsanpham&id=<?=$value['id_sp']; ?>"><img src="<?php echo $value['hinhanh_sp'];?>" alt="..."></a>
+                                            <div class="product-item__info">
+                                                <a href="index.php?action=chitietsanpham&id=<?=$value['id_sp']; ?>"><h4 class="product-item__title"><?php echo $value['ten_sp'];?></h4></a>
+                                                <div class="rating">
+                                                    <i class="fa fa-star" ></i>
+                                                    <i class="fa fa-star" ></i>
+                                                    <i class="fa fa-star" ></i>
+                                                    <i class="fa fa-star-half-o" ></i>
+                                                    <i class="fa fa-star-o" ></i>
+                                                </div>
+                                                <p class="product-item__price" class="product-item__price"><?php echo number_format($value['gia_sp'], 0, ',', '.');?>đ</p>
+                                            </div>
+
+                                            <!-- Overlay -->
+                                            <div class="home-product-item__favorite">
+                                                    <i class="fa fa-check"></i>
+                                                    <span>Yêu thích</span>
+                                            </div>
+                                            <div class="home-product-item__discount">
+                                                <span class="home-product-item__discount-label"
+                                                    >NEW</span
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
+                            }
+                    ?>   
                 </div>
         </div>
         <!-- END: body -->

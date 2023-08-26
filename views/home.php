@@ -44,114 +44,75 @@
         <div class="small-container">
             <h2 class="title" >Sản phẩm nổi bật</h2>
                 <div class="row">
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-11.jpg"></a>
-                        <a href="products-details.html"><h4>Giày thể thao Downshifter</h4></a>
-                        <div class="rating">
-                            <!--(before this added awesome4 cdn font link to the head)added a cdn link by searching font awesome4 icon and from the site  search the star entering the first option and getting a link of this fa-star*-->
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>50.000đ</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-2.jpg"></a>
-                        <h4>Giày chạy bộ buộc dây</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                        </div>
-                        <p>35.000đ</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-3.jpg"></a>
-                        <h4>Giày buộc dây</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>15.000đ</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-10.jpg"></a>
-                        <h4>Giày buộc dây phẳng</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>48.000đ</p>
-                    </div>  
+                    <?php 
+                        if($spnoibat==0){
+                                echo "Đang cập nhật";
+                            }else{
+                                foreach ($spnoibat as $value) {
+                                ?>
+                                        <div class="col-4 product-shadow__hover">
+                                        <div class="products-item" style="overflow: unset">
+                                            <a href="index.php?action=chitietsanpham&id=<?=$value['id_sp']; ?>"><img src="<?php echo $value['hinhanh_sp'];?>" alt="..."></a>
+                                            <div class="product-item__info">
+                                                <a href="index.php?action=chitietsanpham&id=<?=$value['id_sp']; ?>"><h4 class="product-item__title"><?php echo $value['ten_sp'];?></h4></a>
+                                                <div class="rating">
+                                                    <i class="fa fa-star" ></i>
+                                                    <i class="fa fa-star" ></i>
+                                                    <i class="fa fa-star" ></i>
+                                                    <i class="fa fa-star-half-o" ></i>
+                                                    <i class="fa fa-star-o" ></i>
+                                                </div>
+                                                <p class="product-item__price" class="product-item__price"><?php echo number_format($value['gia_sp'], 0, ',', '.');?>đ</p>
+                                            </div>
+
+                                            <!-- Overlay -->
+                                            <div class="home-product-item__favorite">
+                                                    <i class="fa fa-check"></i>
+                                                    <span>Yêu thích</span>
+                                            </div>
+                                            <div class="home-product-item__discount">
+                                                <span class="home-product-item__discount-label"
+                                                    >NEW</span
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
+                            }
+                    ?> 
                 </div>
             
             
              <h2 class="title" >Sản phẩm mới nhất</h2>
                 <div class="row"><?php 
-                        if (isset($_GET['idloai'])) {
-							if($data2==0){
-									echo "Đang cập nhật";
-								}else{
-									foreach ($data2 as $value) {
-										
-									?>
-                                        <div class="col-4">
-                                            <a href="index.php?action=chitietsanpham"><img src="<?php echo $value['hinhanh_sp'];?>" alt="..."></a>
-                                            <a href="index.php?action=chitietsanpham"><h4><?php echo $value['ten_sp'];?></h4></a>
-                                            <div class="rating">
-                                                
-                                                <i class="fa fa-star" ></i>
-                                                <i class="fa fa-star" ></i>
-                                                <i class="fa fa-star" ></i>
-                                                <i class="fa fa-star-half-o" ></i>
-                                                <i class="fa fa-star-o" ></i>
-                                            </div>
-                                            <p><?php echo $value['gia_sp'];?> VND</p>
-                                            <a href="#" class="btn btn-primary">Mua hàng</a>
-                                        </div>
-									<?php
-									}
-								}
-						}
-						else{
-							if($data1==0){
-									echo "Đang cập nhật";
-								}else{
-									foreach ($data1 as $value) {
+                        if($spmoinhat==0){
+                                echo "Đang cập nhật";
+                            }else{
+                                foreach ($spmoinhat as $value) {
 
-									?>
-										 <!-- <div class="col-4 products-item"> -->
-										 <div class="col-4 product-shadow__hover">
-                                            <div class="products-item">
-                                                <a href="index.php?action=chitietsanpham"><img src="<?php echo $value['hinhanh_sp'];?>" alt="..."></a>
-                                                <div class="product-item__info">
-                                                    <a href="index.php?action=chitietsanpham"><h4 class="product-item__title"><?php echo $value['ten_sp'];?></h4></a>
-                                                    <div class="rating">
-                                                        <i class="fa fa-star" ></i>
-                                                        <i class="fa fa-star" ></i>
-                                                        <i class="fa fa-star" ></i>
-                                                        <i class="fa fa-star-half-o" ></i>
-                                                        <i class="fa fa-star-o" ></i>
-                                                    </div>
-                                                    <p class="product-item__price" class="product-item__price"><?php echo number_format($value['gia_sp'], 0, ',', '.');?>đ</p>
+                                ?>
+                                        <!-- <div class="col-4 products-item"> -->
+                                        <div class="col-4 product-shadow__hover">
+                                        <div class="products-item">
+                                            <a href="index.php?action=chitietsanpham&id=<?=$value['id_sp']; ?>"><img src="<?php echo $value['hinhanh_sp'];?>" alt="..."></a>
+                                            <div class="product-item__info">
+                                                <a href="index.php?action=chitietsanpham&id=<?=$value['id_sp']; ?>"><h4 class="product-item__title"><?php echo $value['ten_sp'];?></h4></a>
+                                                <div class="rating">
+                                                    <i class="fa fa-star" ></i>
+                                                    <i class="fa fa-star" ></i>
+                                                    <i class="fa fa-star" ></i>
+                                                    <i class="fa fa-star-half-o" ></i>
+                                                    <i class="fa fa-star-o" ></i>
                                                 </div>
+                                                <p class="product-item__price" class="product-item__price"><?php echo number_format($value['gia_sp'], 0, ',', '.');?>đ</p>
                                             </div>
                                         </div>
-									<?php
-									}
-								}
-						}
 
+                                    </div>
+                                <?php
+                                }
+                            }
                     ?> 
                 </div>
             <!--new row for the latest product-->
@@ -168,7 +129,7 @@
                         <p>Độc quyền có sẵn trên LeoPard</p>
                         <h1>Sports Shoes</h1>
                         <small> Mua trực tuyến các bộ sưu tập giày thể thao mới nhất trên Redstore với giá tốt nhất từ các thương hiệu hàng đầu như Adidas, Nike, Puma, Asics và Sparx khi rảnh rỗi với giá tốt nhất. </small><br>
-                        <a href="products.html" class="btn">Mua ngay &#8594;</a>
+                        <a href="index.php?action=sanpham" class="btn">Mua ngay &#8594;</a>
                     </div>
                 </div>
             </div>

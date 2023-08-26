@@ -62,7 +62,7 @@ if (isset($_POST['nutdx'])) {
 								}
 							} else {
 				?>
-				<li><a class="nav-link" href="index.php?action=dangnhap">Đăng nhập</a></li>
+				<li><a class="nav-link" href="index.php?action=taikhoan">Đăng nhập</a></li>
 	<?php
 					} ?>
 

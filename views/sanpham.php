@@ -118,9 +118,9 @@
                             ?>
                             <div class="col-4 product-shadow__hover">
                                 <div class="products-item">
-                                    <a href="index.php?action=chitietsanpham"><img src="images/product-<?=$i+1?>.jpg" alt="..."></a>
+                                    <a href="#"><img src="images/product-<?=$i+1?>.jpg" alt="..."></a>
                                     <div class="product-item__info">
-                                        <a href="index.php?action=chitietsanpham"><h4 class="product-item__title">Giầy quảng châu <?=$i+1?></h4></a>
+                                        <a href="#"><h4 class="product-item__title">Giầy quảng châu <?=$i+1?></h4></a>
                                         <div class="rating">
                                             <i class="fa fa-star" ></i>
                                             <i class="fa fa-star" ></i>

@@ -19,7 +19,7 @@ $isAdmin = $isLoggedIn && $_SESSION['quyennd'] == 1;
             <li><a href="index.php?action=lienhe">Liên hệ</a></li>
             <?php if ($isLoggedIn) { ?>
                 <li class="navbar__user">
-                    <a class="nav-link <?= $isAdmin ? 'active' : ''; ?>" href="#">
+                    <a class="nav-link nav-link__active <?= $isAdmin ? 'active' : ''; ?>" href="#">
                         Xin chào <?= $_SESSION['tennd']; ?>
                     </a>
                     <ul class="navbar__user-menu">
@@ -42,7 +42,7 @@ $isAdmin = $isLoggedIn && $_SESSION['quyennd'] == 1;
                     </ul>
                 </li>
             <?php } else { ?>
-                <li><a class="nav-link" href="index.php?action=dangnhap">Đăng nhập</a></li>
+                <li><a class="nav-link" href="index.php?action=taikhoan">Đăng nhập</a></li>
             <?php } ?>
         </ul>
     </nav>

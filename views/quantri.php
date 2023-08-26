@@ -16,6 +16,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/stylecss.css">
+    <link rel="stylesheet" href="public/css/customStyle.css" />
 </head>
 <body>
 	<div class="container">
@@ -57,7 +58,7 @@
 					
 					}else {
 						?>
-							<a class="nav-link" href="index.php?action=dangnhap">Đăng nhập</a>
+							<a class="nav-link" href="index.php?action=taikhoan">Đăng nhập</a>
 						<?php
 					} ?>
 
@@ -88,7 +89,7 @@
 						<?php
 						}
 						?>
-			  			<a href="index.php?action=themsanpham" class="nav-link">Thêm sản phẩm</a>
+			  			<a href="index.php?action=themsanpham" class="nav-link btn__themsp btn--primary">Thêm sản phẩm</a>
 			</nav>
 	    </div>
 	    <div class="col-10">
