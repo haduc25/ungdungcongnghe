@@ -180,9 +180,9 @@
         <div class="testimonial">
             <div class="small-container">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-3 testimonial__card">
                         <i class="fa fa-quote-left" ></i>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                        <p>LeoPard Store là điểm đến cho những người yêu thời trang và đam mê giày dép. Với danh mục sản phẩm đa dạng, bao gồm các thương hiệu hàng đầu như Nike, Adidas, Peak, Jordan và Puma, cửa hàng đảm bảo chất lượng tốt nhất từ những người chuyên sản xuất giày uy tín trên toàn thế giới. Đây thực sự là nơi để bạn tìm thấy những đôi giày ưng ý với thiết kế đa dạng và độ bền cao từ những hãng danh tiếng.</p>
                         <div class="rating"> 
                             <i class="fa fa-star" ></i>
                             <i class="fa fa-star" ></i>
@@ -193,22 +193,22 @@
                         <img src="images/user-1.png">
                         <h3>Ngoc Anh</h3>
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 testimonial__card">
                         <i class="fa fa-quote-left" ></i>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                        <p>Tôi đã có cơ hội trải nghiệm mua sắm tại LeoPard Store và sử dụng sản phẩm của họ, và tôi thực sự rất ấn tượng. Từ lúc đặt chân vào cửa hàng, tôi đã được đón tiếp nồng hậu bởi nhân viên thân thiện, sẵn sàng tư vấn và giúp đỡ. Họ không chỉ giúp tôi tìm ra đôi giày phù hợp với phong cách của mình mà còn giải thích chi tiết về các dòng sản phẩm và chất liệu.</p>
                         <div class="rating">
                             <i class="fa fa-star" ></i>
                             <i class="fa fa-star" ></i>
                             <i class="fa fa-star" ></i>
                             <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
+                            <i class="fa fa-star" ></i>
                         </div>
-                        <img src="images/user-2.png">
+                        <img src="images/user-namhai.png">
                         <h3>Nam Hai</h3>
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 testimonial__card">
                         <i class="fa fa-quote-left" ></i>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                        <p>Như một người đam mê thời trang và giày dép, tôi đã có cơ hội trải nghiệm mua sắm tại LeoPard Store và sử dụng những sản phẩm từ cửa hàng này. Tôi thực sự ấn tượng bởi sự đa dạng về mẫu mã và chất lượng của các đôi giày tại đây. Từ những đôi giày thể thao của Nike cho đến những thiết kế phong cách từ Jordan, mọi lựa chọn đều thể hiện sự tỉ mỉ trong từng chi tiết.</p>
                         <div class="rating"> 
                             <i class="fa fa-star" ></i>
                             <i class="fa fa-star" ></i>

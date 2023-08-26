@@ -190,3 +190,9 @@
     color: var(--white-color);
     background-color: var(--primary-color);
 }
+
+
+/* page home -  testimonial */
+.testimonial__card{
+    height: 400px;
+}
