@@ -26,7 +26,7 @@ if (isset($_POST['nutdx'])) {
 						</li>
 						<li class="navbar__user-menu-item"><a class="nav-link active" aria-current="page" href="index.php?action=quantri">Quản trị</a></li>
 						<li class="navbar__user-menu-item">
-							<a href="">Đơn mua</a>
+							<a href="index.php?action=giohang">Đơn mua</a>
 						</li>
 						<li
 							class="navbar__user-menu-item navbar__user-menu-item--separate"
@@ -36,24 +36,35 @@ if (isset($_POST['nutdx'])) {
 					</ul>
 				</li>
 
-			<?php
-						} else {
-		?>
-			<li><a class="nav-link nav-link__active" aria-current="page" href="#">Xin chào2 <?php echo $_SESSION['tennd']; ?></li>
-			</a>
-			<li>
-				<form method="post"><input class="btn-dangxuat" type="submit" name="nutdx" value="Đăng xuất"></form>
-			</li>
-
-		<?php
-
-						}
+				<?php
 					} else {
-		?>
-		<a class="nav-link" href="index.php?action=dangnhap">Đăng nhập</a>
+				?>
+					<li class="navbar__user">
+						<a class="nav-link nav-link__active" aria-current="page" href="#">Xin chào2 <?php echo $_SESSION['tennd']; ?>
+					</a>
+						<ul class="navbar__user-menu">
+							<li class="navbar__user-menu-item">
+								<a href="https://github.com/haduc25">Tài khoản của tôi</a>
+							</li>
+							<li class="navbar__user-menu-item">
+								<a href="index.php?action=giohang">Đơn mua</a>
+							</li>
+							<li
+								class="navbar__user-menu-item navbar__user-menu-item--separate"
+							>
+								<form method="post"><input class="btn-dangxuat" type="submit" name="nutdx" value="Đăng xuất"></form>
+							</li>
+						</ul>
+					</li>
+
+				<?php
+
+								}
+							} else {
+				?>
+				<li><a class="nav-link" href="index.php?action=dangnhap">Đăng nhập</a></li>
 	<?php
 					} ?>
-	</li>
 
 		</ul>
 	</nav>
