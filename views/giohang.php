@@ -1,41 +1,11 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Giỏ hàng</title>
-  <link rel="stylesheet" type="text/css" href="./css/style1.css">
-  <link rel="stylesheet" type="text/css" href="./css/style2.css">
-  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="./css/bootstrap.bundle.min.js"></script>
-  <script src="./css/jquery-3.3.1.slim.min.js"></script>
-  <script src="./css/kit.fontawesome.js"></script>
-</head>
-<body> -->
 <?php
     // set page title
     $pageTitle = "Giỏ hàng - LeoPard";
 
     // header
-    require_once './utils/header.php';
-
-    // connect sql
-    // require_once './utils/connect_sql.php';
+    require_once './utils/header_cart.php';
 ?>
   <?php 
-//    require_once '../utils/connect_sql.php';
-    $host = "localhost";
-    $user = "root";
-    $password = "";
-    $database = "db_sp_mk15";
-    $con = mysqli_connect($host, $user, $password, $database);
-    if (mysqli_connect_errno()){
-        echo "Connection Fail: ".mysqli_connect_errno();
-        exit;
-    }
-    // unset($_SESSION["cart"][76]);
-
     if(!isset($_SESSION["cart"]))
     {
       $_SESSION["cart"] = array();
@@ -93,19 +63,6 @@
       }
     }
 
-    if(!empty($_SESSION["cart"]))
-    {
-        $get_id = implode(",", array_keys($_SESSION["cart"]));
-        $sql = "SELECT * FROM `sanpham` WHERE `id_sp` IN (".$get_id.") ";
-        echo "{$get_id} - {$sql}";
-        $products = mysqli_query($con, $sql);
-    }
-
-
-
-
-    
-
     /*set gia tri*/
       $total_prd = 0;
       $temp_money = 0;
@@ -114,13 +71,7 @@
   ?>
     
     
-      
-    
-    
-    
-    
-    
-    <div class="container">
+    <div class="containerCustom">
             <?php 
                 require_once './utils/navbar.php' 
             ?>
@@ -144,7 +95,7 @@
               <?php
               if(!isset($data_cart))
                 {
-                  echo "<h2 style='text-align: center;'>Không có sản phẩm nào trong giỏ hàng của bạn.<br><img src='../images/empty-cart.png' width= '200'; height= '200'></h2>";
+                  echo "<h2 style='text-align: center;'>Không có sản phẩm nào trong giỏ hàng của bạn.<br><img src='images/empty-cart.png' width= '200'; height= '200'></h2>";
                   ?><a href="index.php?action=sanpham"><input class="btn btn-dark px-4 rounded-pill" style="float: right;" type="button" name="back" value="Tiếp tục mua sắm";></a>
                 <?php
                 }else

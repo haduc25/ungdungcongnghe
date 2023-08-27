@@ -297,3 +297,45 @@
     color: var(--white-color);
     background-color: var(--primary-color-hover);
 }
+
+/* page - gio hang */
+.containerCustom{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-family: var(--main-font);
+}
+
+.navbar > .logo > a, .menu-items > li > a {
+    text-decoration: none;
+    color: #555;
+}
+
+.navbar > .logo > a > img {
+    vertical-align: unset;
+}
+
+.menu-items {
+    margin-bottom: unset;
+}
+
+/* .containerCustom > .navbar > nav > ul > li {
+} */
+
+.containerCustom nav ul li {
+    /* margin-left: -8px; */
+}
+
+.containerCustom > .navbar > .menu-items > li{
+    margin-left: -8px;
+} 
+
+.containerCustom > .navbar ul.menu-items li:not(.navbar__user-menu-item) {
+    /* margin-left: unset; */
+}
+
+.containerCustom a:hover{
+    text-decoration: none;
+    color: #555;
+}

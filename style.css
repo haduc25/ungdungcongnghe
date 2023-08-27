@@ -15,9 +15,9 @@ body{
 
 /*nav maenu on the left as a unordered list*/
 .navbar{
-    display:flex;
-    align-items: center;
-    padding:20px;
+    display: flex !important;;
+    align-items: center !important;
+    padding:20px !important;
 }
 /*nav maenu on the right as a unordered list*/
 nav{
