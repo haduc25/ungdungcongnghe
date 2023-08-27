@@ -69,15 +69,14 @@
           break;
 
             case 'delete':
-                if(isset($_GET['id_sp']))
+                if(isset($_GET['id']))
                 {
-                    unset($_SESSION["cart"][$_GET['id_sp']]);
+                    unset($_SESSION["cart"][$_GET['id']]);
                     ?>
-                    <!--
-                    <script language="javascript">alert("Xoá thành công...!");window.location = './cart.php';</script> -->
+                    <script language="javascript">alert("Xoá thành công...!");window.location = './giohang.php';</script>
                 <?php
                 }
-                header('Location: ./cart.php');
+                // header('Location: ./giohang.php');
                 break;            
 
             case 'submit':
@@ -87,7 +86,7 @@
                         echo "Đặt hàng";
                         exit;
                     }
-                    header('Location: ./cart.php');
+                    header('Location: ./giohang.php');
                     break;
       }
     }
@@ -123,7 +122,7 @@
     </div>
     <!-- End -->
 
-  <form action="cart.php?action=submit" method="POST">
+  <form action="giohang.php?action=submit" method="POST">
       <div class="pb-5" style="">
         <div class="container">
           <div class="row">
@@ -178,8 +177,8 @@
                             <tr>
                               <th scope="row" class="border-0">
                                 <div class="p-2">
-                                  <a href="./cart.php?action=delete&id=<?=$row['id_sp']?>" class="text-dark" style="position: relative; left: -20px;"><i class="fa fa-trash"></i></a>
-                                  <img src="../../../<?=$row['hinhanh_sp']?>" alt="<?=$row['ten_sp']?>" width="70" class="img-fluid rounded shadow-sm">
+                                  <a href="./giohang.php?action=delete&id=<?=$row['id_sp']?>" class="text-dark" style="position: relative; left: -20px;"><i class="fa fa-trash"></i></a>
+                                  <img src="../<?=$row['hinhanh_sp']?>" alt="<?=$row['ten_sp']?>" width="70" class="img-fluid rounded shadow-sm">
                                   <div class="ml-3 d-inline-block align-middle">
                                     <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle"><?=$row['ten_sp']?></a></h5>
                                   </div>
