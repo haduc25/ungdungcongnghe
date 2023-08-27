@@ -46,8 +46,11 @@
                                 <option>43</option>
                             </select>
                         </div>
-                       <!-- <form action="views/giohang.php?action=add" method="POST"> -->
-                       <form action="index.php?action=giohang&task=add" method="POST">
+                        <!-- <div class="products__soluong">
+                            <h5>Số lượng</h5>
+                            <input type="number" min="1" value="<?=$soluong?>">
+                       </div> -->
+                       <form action="views/giohang.php?action=add" method="POST">
                                 <div class="products__soluong">
                                     <h5>Số lượng</h5>
                                     <input type="number" min="0" value="1" name="quantity[<?=$proInfo['id_sp']?>]">

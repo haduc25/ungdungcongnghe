@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -12,19 +12,10 @@
   <script src="./css/jquery-3.3.1.slim.min.js"></script>
   <script src="./css/kit.fontawesome.js"></script>
 </head>
-<body> -->
-<?php
-    // set page title
-    $pageTitle = "Giỏ hàng - LeoPard";
-
-    // header
-    require_once './utils/header.php';
-
-    // connect sql
-    // require_once './utils/connect_sql.php';
-?>
+<body>
   <?php 
-//    require_once '../utils/connect_sql.php';
+   session_start(); 
+    //    require_once '../utils/connect_sql.php';
     $host = "localhost";
     $user = "root";
     $password = "";
@@ -33,15 +24,19 @@
     if (mysqli_connect_errno()){
         echo "Connection Fail: ".mysqli_connect_errno();
         exit;
+    }else{
+        echo 'connected';
     }
-    // unset($_SESSION["cart"][76]);
+
+
 
     if(!isset($_SESSION["cart"]))
     {
+      //neu chua co seesion['cart'] -> create
       $_SESSION["cart"] = array();
     }
 
-    if(!empty($_GET['action']) && !empty($_GET['task']))
+    if(!empty($_GET['action']))
     {
         function update_cart($add = false)
         {
@@ -63,11 +58,14 @@
             }
         }
 
-      switch ($_GET['task']) 
+      switch ($_GET['action']) 
       {
         case 'add':
+          //var_dump($_POST); exit;
                 update_cart(true);
-                header('Location: index.php?action=giohang');
+                //var_dump(update_cart()); exit();
+                header('Location: ./giohang.php');
+          //var_dump($_SESSION["cart"]); exit;
           break;
 
             case 'delete':
@@ -75,7 +73,7 @@
                 {
                     unset($_SESSION["cart"][$_GET['id']]);
                     ?>
-                    <script language="javascript">alert("Xoá thành công...!");window.location = 'index.php?action=giohang';</script>
+                    <script language="javascript">alert("Xoá thành công...!");window.location = './giohang.php';</script>
                 <?php
                 }
                 // header('Location: ./giohang.php');
@@ -88,23 +86,27 @@
                         echo "Đặt hàng";
                         exit;
                     }
-                    header('Location: index.php?action=giohang');
+                    header('Location: ./giohang.php');
                     break;
       }
     }
 
     if(!empty($_SESSION["cart"]))
     {
+        /*
+            array_keys() //chuyển string về int 
+            var_dump(array_keys($_SESSION["cart"])); exit();
+            implode()//nối các phân tử của mảng lại thành một chuỗi
+            implode(",") // ngăn cách bởi dấu ","
+        */
+        //var_dump(implode(",", array_keys($_SESSION["cart"]))); exit; //get id
         $get_id = implode(",", array_keys($_SESSION["cart"]));
-        $sql = "SELECT * FROM `sanpham` WHERE `id_sp` IN (".$get_id.") ";
-        echo "{$get_id} - {$sql}";
-        $products = mysqli_query($con, $sql);
+
+      $sql = "SELECT * FROM `sanpham` WHERE `id_sp` IN (".$get_id.") ";
+      $products = mysqli_query($con, $sql);
+      /*var_dump($products); exit;*/
     }
 
-
-
-
-    
 
     /*set gia tri*/
       $total_prd = 0;
@@ -112,43 +114,35 @@
       $total_money = 0;
       $diff_money = 0;
   ?>
-    
-    
-      
-    
-    
-    
-    
-    
-    <div class="container">
-            <?php 
-                require_once './utils/navbar.php' 
-            ?>
-        </div>
-
-
   <div class="px-4 px-lg-0">
     <!-- For demo purpose -->
     <div class="container text-white py-5 text-center">
       <h1 class="display-4">Giỏ hàng</h1>
       </p>
-    </div>  
-    <!-- End -->    
+    </div>
+    <!-- End -->
 
-
-  <form action="index.php?action=giohang&task=submit" method="POST">
-      <div class="pb-5">
+  <form action="giohang.php?action=submit" method="POST">
+      <div class="pb-5" style="">
         <div class="container">
           <div class="row">
             <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
               <?php
-              if(!isset($data_cart))
+              if(!isset($products))
                 {
                   echo "<h2 style='text-align: center;'>Không có sản phẩm nào trong giỏ hàng của bạn.<br><img src='../images/empty-cart.png' width= '200'; height= '200'></h2>";
-                  ?><a href="index.php?action=sanpham"><input class="btn btn-dark px-4 rounded-pill" style="float: right;" type="button" name="back" value="Tiếp tục mua sắm";></a>
+                  ?><a href="../../../index.php"><input class="btn btn-dark px-4 rounded-pill" style="float: right;" type="button" name="back" value="Tiếp tục mua sắm";></a>
                 <?php
                 }else
-                {?>
+                {
+                    // // echo "meow" .$proInfo;
+                    // // echo "meow" .$products;
+                    // while ($row = mysqli_fetch_assoc($products)) {
+                    //     // Xử lý dữ liệu ở đây và in ra theo mong muốn
+                    //     echo "Product name: " . $row['ten_sp'] . "<br>";
+                    //     echo "Product price: " . $row['gia_sp'] . "<br>";
+                    // }
+                    ?>
                   <!-- Shopping cart table -->
                   <div class="table-responsive">
                     <table class="table">
@@ -171,18 +165,20 @@
                     
                     <tbody>
                       <?php 
-                          // while ($row = mysqli_fetch_array($products)) 
-                          foreach ($data_cart as $row)
+                          //$products = [];
+                          //var_dump($products); exit;
+                          while ($row = mysqli_fetch_array($products)) 
                           {
                             $total_prd = ($row['gia_sp'] * $_SESSION["cart"][$row['id_sp']]);
-                            // var_dump($total_money);
-                            // var_dump($products);
+                            var_dump($total_money);
+                            var_dump($products);
+                            echo 'mee';
                             ?>
                             <tr>
                               <th scope="row" class="border-0">
                                 <div class="p-2">
-                                  <a href="index.php?action=giohang&task=delete&id=<?=$row['id_sp']?>" class="text-dark" style="position: relative; left: -20px;"><i class="fa fa-trash"></i></a>
-                                  <img src="<?=$row['hinhanh_sp']?>" alt="<?=$row['ten_sp']?>" width="70" class="img-fluid rounded shadow-sm">
+                                  <a href="./giohang.php?action=delete&id=<?=$row['id_sp']?>" class="text-dark" style="position: relative; left: -20px;"><i class="fa fa-trash"></i></a>
+                                  <img src="../<?=$row['hinhanh_sp']?>" alt="<?=$row['ten_sp']?>" width="70" class="img-fluid rounded shadow-sm">
                                   <div class="ml-3 d-inline-block align-middle">
                                     <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle"><?=$row['ten_sp']?></a></h5>
                                   </div>
@@ -200,7 +196,7 @@
                   </tbody>
 
                 </table>
-                <a href="index.php?action=sanpham"><input class="btn btn-dark px-4 rounded-pill" style="float: left;" type="button" name="back" value="Tiếp tục mua sắm";></a>
+                <a href="http://localhost/ungdungcongnghe/shoe_store/"><input class="btn btn-dark px-4 rounded-pill" style="float: left;" type="button" name="back" value="Tiếp tục mua sắm";></a>
 
                 <input class="btn btn-dark px-4 rounded-pill" style="float: right; " type="submit" name="update_click" value="Cập nhật giỏ hàng">
               </div>

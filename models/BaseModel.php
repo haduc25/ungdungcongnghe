@@ -152,5 +152,36 @@ class BaseModel
 		return $data;
 	}
 
+	public function laysanphamtheoid($id_cart){
+		$get_id = implode(",", array_keys($id_cart));
+        $sql = "SELECT * FROM `sanpham` WHERE `id_sp` IN (".$get_id.") ";
+
+		$this->ketqua=$this->connect->query($sql);
+		if ($this->ketqua->num_rows==0) {
+			$data=0;
+		}else{
+			while ($row=$this->ketqua->fetch_assoc()) {
+				$data[]=$row;
+			}
+		}
+		return $data;
+	}
+
+	public function laysanphamtheoidList($id_list) {
+		$get_id = implode(",", $id_list);
+		$sql = "SELECT * FROM `sanpham` WHERE `id_sp` IN (".$get_id.") ";
+	
+		$this->ketqua = $this->connect->query($sql);
+		if ($this->ketqua->num_rows == 0) {
+			$data = 0;
+		} else {
+			while ($row = $this->ketqua->fetch_assoc()) {
+				$data[] = $row;
+			}
+		}
+		return $data;
+	}
+	
+
 }
 ?>

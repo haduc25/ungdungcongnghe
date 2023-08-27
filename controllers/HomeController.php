@@ -52,10 +52,6 @@ class SanphamController
 						}
 						break;
 					
-						
-			
-					
-
 				// page products
 				case 'sanpham':
 					$data = $this->model->layloaisanpham();
@@ -75,6 +71,7 @@ class SanphamController
 				case 'lienhe':
 					include_once('views/lienhe.php');
 					break;
+
 				// page products detail
 				case 'chitietsanpham':
 					$data = $this->model->layloaisanpham();
@@ -86,17 +83,38 @@ class SanphamController
 					}
 					include_once('views/chitietsanpham.php');
 					break;
-
+					
 
 				// page cart
+				// case 'giohang':
+				// 	$data = $this->model->layloaisanpham();
+				// 	$data1 = $this->model->laysanpham();
+
+				// 	// $data1 = $this->model->laysanphamtheoidloai2();
+				// 	$con2 = $this->model->ketnoi();
+					
+				// 	// echo "task: " . $_GET['task'];
+				// 	// // exit;
+				// 	// if (isset($_GET['task'])) {
+				// 	// 	echo "task: " . $_GET['task'];
+				// 	// 	// $data2 = $this->model->laysanphamtheoidloai($_GET['task']);
+				// 	// 	// exit;
+				// 	// }
+				// 	include_once('views/giohang.php');
+				// 	break;
+
 				case 'giohang':
 					$data = $this->model->layloaisanpham();
 					$data1 = $this->model->laysanpham();
-					if (isset($_GET['idloai'])) {
-						$data2 = $this->model->laysanphamtheoidloai($_GET['idloai']);
+				
+					if(!empty($_SESSION["cart"])){
+						$id_cart = $_SESSION["cart"]; // Đây là danh sách id sản phẩm trong giỏ hàng
+						$data_cart = $this->model->laysanphamtheoidList(array_keys($id_cart));
 					}
+
 					include_once('views/giohang.php');
 					break;
+				
 
 
 
