@@ -78,10 +78,10 @@
         </div>
 
 
-  <div class="px-4 px-lg-0">
+  <div class="px-4 px-lg-0" style="top: 0">
     <!-- For demo purpose -->
     <div class="container text-white py-5 text-center">
-      <h1 class="display-4">Giỏ hàng</h1>
+      <h1 class="display-4" style="font-weight: 700;">Giỏ hàng</h1>
       </p>
     </div>  
     <!-- End -->    
@@ -95,8 +95,13 @@
               <?php
               if(!isset($data_cart))
                 {
-                  echo "<h2 style='text-align: center;'>Không có sản phẩm nào trong giỏ hàng của bạn.<br><img src='images/empty-cart.png' width= '200'; height= '200'></h2>";
-                  ?><a href="index.php?action=sanpham"><input class="btn btn-dark px-4 rounded-pill" style="float: right;" type="button" name="back" value="Tiếp tục mua sắm";></a>
+                  ?>
+                    <div style="align-items: center; flex-direction: column;display: flex;">
+                        <h2 style='align-items: center;'>Không có sản phẩm nào trong giỏ hàng của bạn</h2>
+                        <img src="images/empty-cart.png" width="200" height="200" style="margin-top: 50px; margin-bottom: 50px;" draggable="false">
+
+                    </div>
+                  <a href="index.php?action=sanpham"><input class="btn btn-dark px-4 rounded-pill" style="float: right; height: 45px;" type="button" name="back" value="Tiếp tục mua sắm";></a>
                 <?php
                 }else
                 {?>
