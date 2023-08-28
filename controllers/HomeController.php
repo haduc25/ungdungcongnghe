@@ -24,8 +24,10 @@ class SanphamController
 							$dem1=$this->model->dembanghi($t,$m);
 							$data2=$this->model->kiemtradangnhap($t,$m);
 							if ($dem1 == 0) {
-								echo "Đăng nhập thất bại";
-							}else{
+								?>
+									<script>alert('Đăng nhập thất bại. \nTài khoản hoặc mật khẩu không chính xác vui lòng thử lại.')</script>
+								<?php
+								}else{
 								$_SESSION['tennd']=$t;
 								$_SESSION['quyennd']=$data2[0]['quyen_nd'];
 								// header('Location:index.php');
@@ -47,7 +49,7 @@ class SanphamController
 							$_SESSION['tennd']=$tendk;
 							$_SESSION['quyennd']=$data2[0]['quyen_nd'];
 							?>
-								<script>location.href = 'index.php';</script>
+								<script>alert('Tạo tài khoản thành công!');location.href = 'index.php';</script>
 							<?php
 						}
 						break;

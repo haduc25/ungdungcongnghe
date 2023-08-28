@@ -28,17 +28,17 @@
                                 <hr id="Indicator">
                             </div>
                             <form id="LoginForm" method="post">
-                                <input type="text" placeholder="username" name="tdn">
-                                <input type="password" placeholder="password" name="mk">
+                                <input type="text" placeholder="username" name="tdn" required>
+                                <input type="password" placeholder="password" name="mk" required>
                                 <button type="submit" class="btn" name="nutdangnhap">Đăng nhập</button>
 				                <!-- <input type="submit" class="btn btn-lg btn-primary" name="nutdangnhap" value="ĐĂNG NHẬP"> -->
                                 <a href="">Quên mật khẩu?</a>
                             </form>
                             
                             <form id="RegForm" method="post">
-                                <input type="text" placeholder="username" name="tendk">
-                                <input type="email" placeholder="email" name="emaildk">
-                                <input type="password" placeholder="password" name="mkdk">
+                                <input type="text" placeholder="username" name="tendk" required>
+                                <input type="email" placeholder="email" name="emaildk" required>
+                                <input type="password" placeholder="password" name="mkdk" required>
                                 <button type="submit" class="btn" name="nutdangky">Đăng ký</button>
                             </form>
                         </div>

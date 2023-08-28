@@ -30,7 +30,7 @@
                        <h3>Địa chỉ: Z-115, Xã Quyết Thắng, TP.Thái Nguyên, Tỉnh Thái Nguyên.</h3>
                        <h3>Số ĐT: 038983165 - NTL</h3>
                        <h3>Fanpage: <a href="https://www.facebook.com/LeoPardFPS" target="_blank" style="color:blue">facebook.com/LeoPardStore</a></h3>
-                       <h3>Youtube: <a href="https://www.youtube.com/@Bomman" target="_blank" style="color:blue">youtube.com/LeoPardStore</a></h3>
+                       <h3>Youtube: <a href="https://www.youtube.com/@leopardfps" target="_blank" style="color:blue">youtube.com/LeoPardStore</a></h3>
                     </div>
                 </div>
             </div>
