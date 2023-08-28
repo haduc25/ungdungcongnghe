@@ -97,7 +97,7 @@
                                                         <i class="fa fa-star-half-o" ></i>
                                                         <i class="fa fa-star-o" ></i>
                                                     </div>
-                                                    <p class="product-item__price" class="product-item__price"><?php echo number_format($value['gia_sp'], 0, ',', '.');?>đ</p>
+                                                    <p class="product-item__price" class="product-item__price"><?= number_format($value['gia_sp'], 0, ',', '.');?>đ</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -115,12 +115,13 @@
             <div class="row">
                     <?php
                         for ($i=0; $i < 8; $i++) { 
+                            $randomNumber = mt_rand(100, 999);
                             ?>
                             <div class="col-4 product-shadow__hover">
                                 <div class="products-item">
                                     <a href="#"><img src="images/product-<?=$i+1?>.jpg" alt="..."></a>
                                     <div class="product-item__info">
-                                        <a href="#"><h4 class="product-item__title">Giầy quảng châu <?=$i+1?></h4></a>
+                                        <a href="#"><h4 class="product-item__title">Giày loại <?=$i+1?></h4></a>
                                         <div class="rating">
                                             <i class="fa fa-star" ></i>
                                             <i class="fa fa-star" ></i>
@@ -128,7 +129,7 @@
                                             <i class="fa fa-star-half-o" ></i>
                                             <i class="fa fa-star-o" ></i>
                                         </div>
-                                        <p class="product-item__price" class="product-item__price">1.000đ</p>
+                                        <p class="product-item__price" class="product-item__price"><?=$randomNumber.".000đ"?></p>
                                     </div>
                                 </div>
                             </div>

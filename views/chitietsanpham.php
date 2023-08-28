@@ -50,7 +50,7 @@
                        <form action="index.php?action=giohang&task=add" method="POST">
                                 <div class="products__soluong">
                                     <h5>Số lượng</h5>
-                                    <input type="number" min="0" value="1" name="quantity[<?=$proInfo['id_sp']?>]">
+                                    <input type="number" min="1" value="1" name="quantity[<?=$proInfo['id_sp']?>]">
                                 </div>
                                 <div style="margin: 15px 0"><button type="submit" class="btn" style="width: 230px; height: 40px">Thêm vào giỏ hàng</button></div>
                             </form>

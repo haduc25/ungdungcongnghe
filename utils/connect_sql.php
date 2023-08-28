@@ -8,8 +8,6 @@
 		$rs = mysqli_query($con, $sqlSelector);
 
 		$proInfo = mysqli_fetch_assoc($rs);
-		
-		echo 'connected';
  }else{
 	echo 'not connect';
  }
