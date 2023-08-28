@@ -6,6 +6,10 @@
     require_once './utils/header_cart.php';
 ?>
   <?php 
+    // 
+    $isLoggedIn = isset($_SESSION['tennd']);
+
+
     if(!isset($_SESSION["cart"]))
     {
       $_SESSION["cart"] = array();
@@ -110,16 +114,16 @@
                     <table class="table">
                       <thead>
                         <tr>
-                          <th scope="col" class="border-0 bg-light">
+                          <th scope="col" class="border-0 bg-light table__sp">
                             <div class="p-2 px-3 text-uppercase">SẢN PHẨM</div>
                           </th>
-                          <th scope="col" class="border-0 bg-light">
+                          <th scope="col" class="border-0 bg-light table__sp">
                             <div class="py-2 text-uppercase">GIÁ</div>
                           </th>
-                          <th scope="col" class="border-0 bg-light">
+                          <th scope="col" class="border-0 bg-light table__sp">
                             <div class="py-2 text-uppercase">SỐ LƯỢNG</div>
                           </th>
-                          <th scope="col" class="border-0 bg-light">
+                          <th scope="col" class="border-0 bg-light table__sp">
                             <div class="py-2 text-uppercase">THÀNH TIỀN</div>
                           </th>
                         </tr>
@@ -128,11 +132,10 @@
                     <tbody>
                       <?php 
                           // while ($row = mysqli_fetch_array($products)) 
+                         if(isset($_SESSION["cart"])){
                           foreach ($data_cart as $row)
                           {
                             $total_prd = ($row['gia_sp'] * $_SESSION["cart"][$row['id_sp']]);
-                            // var_dump($total_money);
-                            // var_dump($products);
                             ?>
                             <tr>
                               <th scope="row" class="border-0">
@@ -145,20 +148,23 @@
                                 </div>
                               </th>
                               <td class="border-0 align-middle"><strong><?= number_format($row['gia_sp'], 0, ",", ".") ?> đ</strong></td>
-                              <td class="border-0 align-middle"><input class="quantity12" min="0" name="quantity[<?=$row['id_sp']?>]" value="<?=$_SESSION["cart"][$row['id_sp']]?>" type="number" size="2" style="width: 50px;"></td>
+                              <td class="border-0 align-middle"><input class="quantity12" min="0" name="quantity[<?=$row['id_sp']?>]" value="<?=$_SESSION["cart"][$row['id_sp']]?>" type="number" size="2" style="width: 80px;text-align:center;"></td>
                               <td class="border-0 align-middle"><strong><?=number_format($total_prd, 0, ",", ".")?> đ</strong></td>
                             </tr>
                             <?php
                             $temp_money += $row['gia_sp'] * $_SESSION["cart"][$row['id_sp']];
                             $total_money = $temp_money + $diff_money;
                           }
+                         }
                         ?>
                   </tbody>
 
                 </table>
-                <a href="index.php?action=sanpham"><input class="btn btn-dark px-4 rounded-pill" style="float: left;" type="button" name="back" value="Tiếp tục mua sắm";></a>
-
-                <input class="btn btn-dark px-4 rounded-pill" style="float: right; " type="submit" name="update_click" value="Cập nhật giỏ hàng">
+                <div class="wrapper__btn-has-sp">
+                  <a href="index.php?action=sanpham"><input class="btn btn-dark px-4 rounded-pill btn__has-sp"  type="button" name="back" value="Tiếp tục mua sắm";></a>
+  
+                  <input class="btn btn-dark px-4 rounded-pill btn__has-sp" type="submit" name="update_click" value="Cập nhật giỏ hàng">
+                </div>
               </div>
             <?php }?>
             <!-- End -->
@@ -169,8 +175,8 @@
           <div class="col-lg-6">
             <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Thông tin giao hàng</div>
             <div class="p-4">
-                <?php if (empty($_SESSION['cur_user'])) { 
-                    echo "<p class='font-italic mb-4'>Bạn đã có tài khoản? <a href='../../../index.php'>Đăng nhập</a></p>";
+                <?php if (empty($isLoggedIn)) { 
+                    echo "<p class='font-italic mb-4'>Bạn đã có tài khoản? <a href='index.php?action=taikhoan' class='btn__has-account'>Đăng nhập</a></p>";
                 }?>
                   <div class="form-group"> <label for="NAME" class="small text-muted mb-1">Họ và tên</label> <input type="text" class="form-control form-control-sm" name="NAME" id="NAME" aria-describedby="helpId" placeholder="Họ và Tên"> </div>
                   <div class="row no-gutters">
@@ -186,10 +192,10 @@
             </div>
             <!--Hoa Don-->
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6" style="<?= empty($isLoggedIn) ? 'top: -24px' : 'top: unset'; ?>">
             <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Chi tiết hóa đơn </div>
             <div class="p-4">
-              <p class="font-weight-bold mb-4">Cửa hàng quần áo nam Tuấn Anh</p>
+              <p class="font-weight-bold mb-4">Cửa hàng giầy LeoPard</p>
               <ul class="list-unstyled mb-4">
                 <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tạm tính: </strong><strong><?=number_format($temp_money, 0, ",", ".")?> đ</strong></li>
                 <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Phí vận chuyển:</strong><strong>—</strong></li>              
@@ -197,7 +203,10 @@
                 <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng cộng:</strong>
                   <h5 class="font-weight-bold"><?=number_format($total_money, 0, ",", ".")?> đ</h5>
                 </li>
-              </ul><a href="../payment/payment.php" class="btn btn-dark rounded-pill py-2 btn-block">Đặt hàng và đến phương thức thanh toán</a>
+              </ul>
+              <div class="wrapper__btn">
+                <a href="index.php?action=thanhtoan" class="btn btn-dark rounded-pill py-2 btn-block btn__has-sp">Đặt hàng và đến phương thức thanh toán</a>
+              </div>
             </div>
           </div>
         </div>

@@ -339,3 +339,44 @@
     text-decoration: none;
     color: #555;
 }
+
+.table__sp{
+    font-weight: 700;
+}
+
+.wrapper__btn-has-sp{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #cccccc70;
+    margin-top: 30px;
+    padding-top: 25px;
+}
+
+.btn__has-sp, .wrapper__btn-has-sp > .btn__has-sp{
+    height: 40px;
+    width: 200px;
+    background-color: var(--primary-color);
+}
+
+.btn__has-sp, .wrapper__btn-has-sp > .btn__has-sp:hover,
+.wrapper__btn-has-sp > a >input:hover,
+.wrapper__btn > a:hover{
+    background-color: var(--primary-color-hover);
+}
+
+.wrapper__btn-has-sp > a >input,
+.wrapper__btn > a {
+    background-color: var(--primary-color);
+}
+
+
+.btn__has-account{
+    color: #555;
+    font-size: 16px;
+}
+
+.btn__has-account:hover{
+    color: #333;
+    text-decoration: underline;
+}
+

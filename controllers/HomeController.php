@@ -85,34 +85,18 @@ class SanphamController
 					break;
 					
 
-				// page cart
-				// case 'giohang':
-				// 	$data = $this->model->layloaisanpham();
-				// 	$data1 = $this->model->laysanpham();
-
-				// 	// $data1 = $this->model->laysanphamtheoidloai2();
-				// 	$con2 = $this->model->ketnoi();
-					
-				// 	// echo "task: " . $_GET['task'];
-				// 	// // exit;
-				// 	// if (isset($_GET['task'])) {
-				// 	// 	echo "task: " . $_GET['task'];
-				// 	// 	// $data2 = $this->model->laysanphamtheoidloai($_GET['task']);
-				// 	// 	// exit;
-				// 	// }
-				// 	include_once('views/giohang.php');
-				// 	break;
 
 				case 'giohang':
-					$data = $this->model->layloaisanpham();
-					$data1 = $this->model->laysanpham();
-				
 					if(!empty($_SESSION["cart"])){
-						$id_cart = $_SESSION["cart"]; // Đây là danh sách id sản phẩm trong giỏ hàng
+						$id_cart = $_SESSION["cart"];
 						$data_cart = $this->model->laysanphamtheoidList(array_keys($id_cart));
 					}
 
 					include_once('views/giohang.php');
+					break;
+
+				case 'thanhtoan':
+					include_once('views/thanhtoan.php');
 					break;
 				
 
