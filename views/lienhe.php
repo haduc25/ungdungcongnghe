@@ -47,55 +47,43 @@
         <!----------------------------------products------------------------------------->
         <div class="small-container">
              <div class="row">
-                     <div class="col-4">
-                        <a href="index.php?action=chitietsanpham"><img src="images/product-11.jpg"></a>
-                        <a href="index.php?action=chitietsanpham"><h4>Giày thể thao Downshifter</h4></a>
-                        <div class="rating">
-                            
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>50.000đ</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="index.php?action=chitietsanpham"><img src="images/product-2.jpg"></a>
-                        <h4>Giày chạy bộ buộc dây</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                        </div>
-                        <p>35.000đ</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="index.php?action=chitietsanpham"><img src="images/product-3.jpg"></a>
-                        <h4>Giày buộc dây</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>15.000đ</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="index.php?action=chitietsanpham"><img src="images/product-10.jpg"></a>
-                        <h4>Giày buộc dây phẳng</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>48.000đ</p>
-                    </div>  
+             <?php 
+                        if($spnn==0){
+                                echo "Đang cập nhật";
+                            }else{
+                                foreach ($spnn as $value) {
+                                ?>
+                                        <div class="col-4 product-shadow__hover">
+                                        <div class="products-item" style="overflow: unset">
+                                            <a href="index.php?action=chitietsanpham&id=<?=$value['id_sp']; ?>"><img src="<?php echo $value['hinhanh_sp'];?>" alt="..."></a>
+                                            <div class="product-item__info">
+                                                <a href="index.php?action=chitietsanpham&id=<?=$value['id_sp']; ?>"><h4 class="product-item__title"><?php echo $value['ten_sp'];?></h4></a>
+                                                <div class="rating">
+                                                    <i class="fa fa-star" ></i>
+                                                    <i class="fa fa-star" ></i>
+                                                    <i class="fa fa-star" ></i>
+                                                    <i class="fa fa-star-half-o" ></i>
+                                                    <i class="fa fa-star-o" ></i>
+                                                </div>
+                                                <p class="product-item__price" class="product-item__price"><?php echo number_format($value['gia_sp'], 0, ',', '.');?>đ</p>
+                                            </div>
+
+                                            <!-- Overlay -->
+                                            <div class="home-product-item__favorite">
+                                                    <i class="fa fa-check"></i>
+                                                    <span>Yêu thích</span>
+                                            </div>
+                                            <div class="home-product-item__discount">
+                                                <span class="home-product-item__discount-label"
+                                                    >NEW</span
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
+                            }
+                    ?>  
                 </div>
         </div>
         <!-- END: body -->

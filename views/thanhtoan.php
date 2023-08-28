@@ -13,7 +13,8 @@
             ?>
         </div>
 <!-- START: body -->
-<div style="height: 500px;">
+<div style="height: 350px;">
+    <h2 style="text-align: center; margin-top: 150px">Đặt hàng thành công!</h2>
 </div>
 <!-- END: body -->
 <?php 

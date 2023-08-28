@@ -52,7 +52,7 @@
                                     <h5>Số lượng</h5>
                                     <input type="number" min="0" value="1" name="quantity[<?=$proInfo['id_sp']?>]">
                                 </div>
-                                <button type="submit" class="btn" style="width: 150px;">Thêm vào giỏ hàng<i class="fas fa-shopping-cart"></i></button>
+                                <div style="margin: 15px 0"><button type="submit" class="btn" style="width: 230px; height: 40px">Thêm vào giỏ hàng</button></div>
                             </form>
 
 

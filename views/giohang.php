@@ -143,7 +143,7 @@
                                   <a href="index.php?action=giohang&task=delete&id=<?=$row['id_sp']?>" class="text-dark" style="position: relative; left: -20px;"><i class="fa fa-trash"></i></a>
                                   <img src="<?=$row['hinhanh_sp']?>" alt="<?=$row['ten_sp']?>" width="70" class="img-fluid rounded shadow-sm">
                                   <div class="ml-3 d-inline-block align-middle">
-                                    <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle"><?=$row['ten_sp']?></a></h5>
+                                    <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle txt_tensp"><?=$row['ten_sp']?></a></h5>
                                   </div>
                                 </div>
                               </th>
@@ -211,11 +211,10 @@
           </div>
         </div>
 
-       <?php
-          echo "<br>";
-        //   require '../footer/footer.php'; 
-       ?>
       </div>
     </div>
     </form>
   </div>
+       <?php
+          require_once './utils/footer.php';
+       ?>

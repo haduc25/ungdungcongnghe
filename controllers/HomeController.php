@@ -64,11 +64,13 @@ class SanphamController
 
 				// page gioithieu
 				case 'gioithieu':
+					$spnn = $this->model->laysanphamngaunhien(4);
 					include_once('views/gioithieu.php');
 					break;
 
 				// page lienhe
 				case 'lienhe':
+					$spnn = $this->model->laysanphamngaunhien(8);
 					include_once('views/lienhe.php');
 					break;
 
