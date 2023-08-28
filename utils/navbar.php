@@ -17,6 +17,7 @@ $isAdmin = $isLoggedIn && $_SESSION['quyennd'] == 1;
             <li><a href="index.php?action=sanpham">Sản phẩm</a></li>
             <li><a href="index.php?action=gioithieu">Giới thiệu</a></li>
             <li><a href="index.php?action=lienhe">Liên hệ</a></li>
+            <li><a href="#" class="search-ico"><i class="fa fa-search" aria-hidden="true"></i></a></li>
             <?php if ($isLoggedIn) { ?>
                 <li class="navbar__user">
                     <a class="nav-link nav-link__active <?= $isAdmin ? 'active' : ''; ?>" href="#">
@@ -49,3 +50,14 @@ $isAdmin = $isLoggedIn && $_SESSION['quyennd'] == 1;
     <a href="index.php?action=giohang"><img src="images/cart.png" width="30px" height="30px"></a>
     <img src="images/menu.png" class="menu-icon" onClick="menutoggle()">
 </div>
+
+<!--search-->
+<form method="POST">
+    <div class="search-bar">
+        <div class="search">
+            <input type="text" placeholder="Tìm kiếm sản phẩm..." name="str" required>
+            <button type="submit" name="submit" style= 'border: none; background-color: white;'><a href="javascript:void(0);" class="btn__search"><i class="fa fa-search"></i></a></button>
+            <a href="#" class="btn__search search-cancel">&times;</a>
+        </div>
+    </div>	
+</form>

@@ -56,4 +56,39 @@
             MenuItems.style.maxHeight="0px";
         }
     }
+
+    // seacrh
+    // const searchBar = document.querySelector('.search-bar');
+    //         MenuItems.style.maxHeight="0px";
+    //         const showSearch = () => {
+    //             searchBar.classList.add('search-bar-active')
+    //         }
+    //         function menutoggle2(){
+    //             // if(MenuItems.style.maxHeight == "0px"){
+    //             //     MenuItems.style.maxHeight="200px";
+    //             // }
+    //             // else{
+    //             //     MenuItems.style.maxHeight="0px";
+    //             // }
+    //             console.log(menuItems2)
+    //         }
+
+
+    const searchIco = document.querySelector('.search-ico');
+    const searchCancel = document.querySelector('.search-cancel');
+    const searchBar = document.querySelector('.search-bar');
+
+    searchIco.addEventListener('click', () => {
+        searchBar.classList.toggle('search-bar-active');
+    });
+
+    searchCancel.addEventListener('click', () => {
+        searchBar.classList.remove('search-bar-active');
+    });
+
+
+
 </script>
+
+
+
