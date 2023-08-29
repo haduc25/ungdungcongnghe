@@ -58,22 +58,6 @@
     }
 
     // seacrh
-    // const searchBar = document.querySelector('.search-bar');
-    //         MenuItems.style.maxHeight="0px";
-    //         const showSearch = () => {
-    //             searchBar.classList.add('search-bar-active')
-    //         }
-    //         function menutoggle2(){
-    //             // if(MenuItems.style.maxHeight == "0px"){
-    //             //     MenuItems.style.maxHeight="200px";
-    //             // }
-    //             // else{
-    //             //     MenuItems.style.maxHeight="0px";
-    //             // }
-    //             console.log(menuItems2)
-    //         }
-
-
     const searchIco = document.querySelector('.search-ico');
     const searchCancel = document.querySelector('.search-cancel');
     const searchBar = document.querySelector('.search-bar');
@@ -85,6 +69,30 @@
     searchCancel.addEventListener('click', () => {
         searchBar.classList.remove('search-bar-active');
     });
+
+    // const homeThumb = document.getElementById('home__thumb');
+    // const searchForm = document.getElementById('search-form');
+    // // console.log(homeThumb);
+    // console.log('searchForm: ', searchForm);
+
+    // searchForm.addEventListener('submit', () => {
+    //     alert('meow');
+    //     // console.log(homeThumb);
+    // })
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const searchForm = document.querySelector('#search-form');
+    const searchInput = document.querySelector('#search-input');
+
+    searchForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // Ngăn chặn việc gửi biểu mẫu
+
+        const keyword = searchInput.value; // Lấy giá trị từ trường nhập liệu
+
+        // Chuyển hướng đến URL với tham số keyword
+        window.location.href = `index.php?action=ketquatimkiem&keyword=${keyword}`;
+    });
+});
 
 
 

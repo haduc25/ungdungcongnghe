@@ -446,3 +446,30 @@
         bottom: 0px;
     }
 }
+
+/* pages - search */
+.search-result-title{
+    text-align: center; 
+    margin-top: 35px;
+    margin-bottom: 25px;
+    font-family: var(--title-font);
+}
+
+.wrapper__img_not_found{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seacrh-not-found{
+    background-image: url('../../images/search-not-found.jpg');
+    height: 600px;
+    width: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.product-item__info__search{
+    text-align: center;
+}

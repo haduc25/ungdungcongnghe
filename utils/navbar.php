@@ -5,6 +5,19 @@ if (isset($_POST['nutdx'])) {
 
 $isLoggedIn = isset($_SESSION['tennd']);
 $isAdmin = $isLoggedIn && $_SESSION['quyennd'] == 1;
+
+
+    // // connect sql
+    // require_once './utils/connect_db.php';
+
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "db_sp_mk15";
+$conn = mysqli_connect($host, $user, $password, $database);
+if (mysqli_connect_errno()){
+    echo "Connection Fail: ".mysqli_connect_errno();exit;
+}
 ?>
 
 <div class="navbar">
@@ -52,12 +65,16 @@ $isAdmin = $isLoggedIn && $_SESSION['quyennd'] == 1;
 </div>
 
 <!--search-->
-<form method="POST">
+<form action="index.php?action=ketquatimkiem&keyword=" method="POST" id="search-form">
     <div class="search-bar">
         <div class="search">
-            <input type="text" placeholder="Tìm kiếm sản phẩm..." name="str" required>
-            <button type="submit" name="submit" style= 'border: none; background-color: white;'><a href="javascript:void(0);" class="btn__search"><i class="fa fa-search"></i></a></button>
+            <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm..." name="str" required>
+            <button type="submit" name="submit" style='border: none; background-color: white;'><a href="#" class="btn__search"><i class="fa fa-search"></i></a></button>
             <a href="#" class="btn__search search-cancel">&times;</a>
         </div>
-    </div>	
+    </div>
 </form>
+
+
+
+

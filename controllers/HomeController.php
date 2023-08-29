@@ -76,6 +76,12 @@ class SanphamController
 					include_once('views/lienhe.php');
 					break;
 
+				// page ketquatimkiem
+				case 'ketquatimkiem':
+					$spnn = $this->model->laysanphamngaunhien(8);
+					include_once('views/ketquatimkiem.php');
+					break;
+
 				// page products detail
 				case 'chitietsanpham':
 					$data = $this->model->layloaisanpham();

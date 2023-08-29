@@ -11,7 +11,7 @@
           <!-- START: navbar -->
           <?php require_once './utils/navbar.php'; ?>
             <!-- END: navbar -->
-            <div class="row">
+            <div class="row" id="home__thumb">
                 <div class="col-2">
                     <h1>Give your Workout <br>A New Style!</h1>
                     <p>Success isn't always about greatness. It's about consistency. Consistent<br>hard work gains success. Greatness will come.</p>
