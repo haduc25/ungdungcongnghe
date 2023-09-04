@@ -362,12 +362,12 @@
 
 .btn__has-sp, .wrapper__btn-has-sp > .btn__has-sp:hover,
 .wrapper__btn-has-sp > a >input:hover,
-.wrapper__btn > a:hover{
+.wrapper__btn > a:hover, .wrapper__btn > input:hover{
     background-color: var(--primary-color-hover);
 }
 
 .wrapper__btn-has-sp > a >input,
-.wrapper__btn > a {
+.wrapper__btn > a, .wrapper__btn > input {
     background-color: var(--primary-color);
 }
 
@@ -516,4 +516,16 @@
 
 .contant_box_404 > h3, p{
     padding-top: 10px;
+}
+
+/* pages - thanh toan */
+.wrapper__thanhtoan{
+    margin: 40px 0;
+    margin-left: unset !important;
+    margin-right: unset !important;
+}
+
+.wrapper__item{
+    background-color: #fff;
+    border-radius: 8px;
 }
