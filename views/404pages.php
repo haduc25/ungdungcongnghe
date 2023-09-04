@@ -2,8 +2,8 @@
 // set page title
 $pageTitle = "404 Page Error - LeoPard";
 
-// header
-// require_once './utils/header_404.php';
+// header 
+// src 404 template: https://dev.to/stackfindover/35-html-404-page-templates-5bge
 require_once './utils/header.php';
 ?>
 

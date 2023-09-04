@@ -49,10 +49,10 @@
                 {
                     unset($_SESSION["cart"][$_GET['id']]);
                     ?>
-                    <script language="javascript">alert("Xoá thành công...!");window.location = 'index.php?action=giohang';</script>
+                    <!-- <script language="javascript">alert("Xoá thành công...!");window.location = 'index.php?action=giohang';</script> -->
                 <?php
                 }
-                // header('Location: ./giohang.php');
+                header('Location: index.php?action=giohang');
                 break;            
 
             case 'submit':
