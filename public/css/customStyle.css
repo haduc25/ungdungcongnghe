@@ -520,7 +520,7 @@
 
 /* pages - thanh toan */
 .wrapper__thanhtoan{
-    margin: 40px 0;
+    margin: 55px 0;
     margin-left: unset !important;
     margin-right: unset !important;
 }
@@ -528,4 +528,14 @@
 .wrapper__item{
     background-color: #fff;
     border-radius: 8px;
+}
+
+.wrapper__pttt{
+    display: flex;
+    flex-direction: column;
+}
+
+.pttt__radio > input {
+    width: unset;
+    height: unset;
 }

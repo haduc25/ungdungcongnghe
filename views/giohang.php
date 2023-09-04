@@ -76,6 +76,10 @@ if (!empty($_GET['action']) && !empty($_GET['task'])) {
           $_SESSION[$ma_don_hang]['sdtnn'] = $_POST['sdtnguoinhan'];
           $_SESSION[$ma_don_hang]['diachinn'] = $_POST['diachinguoinhan'];
           $_SESSION[$ma_don_hang]['ghichunn'] = $_POST['ghichunguoinhan'];
+          $_SESSION[$ma_don_hang]['ghichunn'] = $_POST['ghichunguoinhan'];
+          $_SESSION[$ma_don_hang]['tongtien'] = $_POST['totalmoney'];
+
+          // echo $_POST['totalmoney']; exit;
 
           // Lưu mã đơn hàng vào SESSION
           $_SESSION['ma_don_hang'] = $ma_don_hang;
@@ -200,16 +204,16 @@ $diff_money = 0;
                 <?php if (empty($isLoggedIn)) {
                   echo "<p class='font-italic mb-4'>Bạn đã có tài khoản? <a href='index.php?action=taikhoan' class='btn__has-account'>Đăng nhập</a></p>";
                 } ?>
-                <div class="form-group"> <label for="NAME" class="small text-muted mb-1">Họ và tên</label> <input type="text" class="form-control form-control-sm" name="tennguoinhan" id="NAME" aria-describedby="helpId" placeholder="Họ và Tên" required value="Minh Duc"> </div>
+                <div class="form-group"> <label for="NAME" class="small text-muted mb-1">Họ và tên</label> <input type="text" class="form-control form-control-sm" name="tennguoinhan" id="NAME" aria-describedby="helpId" placeholder="Họ và Tên" required> </div>
                 <div class="row no-gutters">
                   <div class="col-sm-6 pr-sm-2">
-                    <div class="form-group"> <label for="NAME" class="small text-muted mb-1">E-mail</label> <input type="text" class="form-control form-control-sm" name="emailnguoinhan" id="NAME" aria-describedby="helpId" placeholder="Example@email.com" required value="minhduc@mail.com"> </div>
+                    <div class="form-group"> <label for="NAME" class="small text-muted mb-1">E-mail</label> <input type="email" class="form-control form-control-sm" name="emailnguoinhan" id="NAME" aria-describedby="helpId" placeholder="Example@email.com" required> </div>
                   </div>
                   <div class="col-sm-6">
-                    <div class="form-group"> <label for="NAME" class="small text-muted mb-1">Số điện thoại</label> <input type="text" class="form-control form-control-sm" name="sdtnguoinhan" id="NAME" aria-describedby="helpId" required value="0964 103 861"> </div>
+                    <div class="form-group"> <label for="NAME" class="small text-muted mb-1">Số điện thoại</label> <input type="text" class="form-control form-control-sm" name="sdtnguoinhan" id="NAME" aria-describedby="helpId" required> </div>
                   </div>
                 </div>
-                <div class="form-group"> <label for="NAME" class="small text-muted mb-1">Địa chỉ</label> <input type="text" class="form-control form-control-sm" name="diachinguoinhan" id="NAME" aria-describedby="helpId" required value="Cao ky - Cho Moi - Bac Kan"> </div>
+                <div class="form-group"> <label for="NAME" class="small text-muted mb-1">Địa chỉ</label> <input type="text" class="form-control form-control-sm" name="diachinguoinhan" id="NAME" aria-describedby="helpId" required> </div>
                 <div class="form-group"> <label for="NAME" class="small text-muted mb-1">Ghi chú</label><textarea name="ghichunguoinhan" cols="30" rows="2" class="form-control"></textarea></div>
               </div>
               <!--Hoa Don-->
@@ -226,11 +230,9 @@ $diff_money = 0;
                     <h5 class="font-weight-bold"><?= number_format($total_money, 0, ",", ".") ?> đ</h5>
                   </li>
                 </ul>
-                <!-- <div class="wrapper__btn">
-                  <a href="index.php?action=thanhtoan" class="btn btn-dark rounded-pill py-2 btn-block btn__has-sp">Đặt hàng và đến phương thức thanh toán</a>
-                </div> -->
                 <div class="wrapper__btn">
-                  <input class="btn btn-dark px-4 rounded-pill btn__has-sp" type="submit" name="order_click" value="Đặt hàng và đến phương thức thanh toán">
+                  <input type="hidden" name="totalmoney" value="<?= $total_money ?>">
+                  <input class="btn btn-dark px-4 rounded-pill btn__has-sp <?= !isset($data_cart) ? 'disabled-link' : ''; ?>" type="submit" name="order_click" value="Đặt hàng và đến phương thức thanh toán">
                 </div>
 
               </div>
