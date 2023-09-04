@@ -105,7 +105,11 @@
                         <img src="images/empty-cart.png" width="200" height="200" style="margin-top: 50px; margin-bottom: 50px;" draggable="false">
 
                     </div>
-                  <a href="index.php?action=sanpham"><input class="btn btn-dark px-4 rounded-pill" style="float: right; height: 45px;" type="button" name="back" value="Tiếp tục mua sắm";></a>
+                  <!-- <a href="index.php?action=sanpham"><input class="btn btn-dark px-4 rounded-pill" style="float: right; height: 45px; background-color: #ff523b;" type="button" name="back" value="Tiếp tục mua sắm";></a> -->
+                  <a href="index.php?action=sanpham">
+                      <input class="btn btn-dark px-4 rounded-pill" style="float: right; height: 45px; background-color: #ff523b;" type="button" name="back" value="Tiếp tục mua sắm"; onmouseover="this.style.backgroundColor='#ff523bb5';" onmouseout="this.style.backgroundColor='#ff523b';">
+                  </a>
+
                 <?php
                 }else
                 {?>
@@ -204,9 +208,13 @@
                   <h5 class="font-weight-bold"><?=number_format($total_money, 0, ",", ".")?> đ</h5>
                 </li>
               </ul>
-              <div class="wrapper__btn">
+              <!-- <div class="wrapper__btn">
                 <a href="index.php?action=thanhtoan" class="btn btn-dark rounded-pill py-2 btn-block btn__has-sp">Đặt hàng và đến phương thức thanh toán</a>
-              </div>
+              </div> -->
+              <div class="wrapper__btn">
+                <a href="<?= isset($data_cart) ? 'index.php?action=thanhtoan' : '#' ?>" class="btn btn-dark rounded-pill py-2 btn-block btn__has-sp <?= !isset($data_cart) ? 'disabled-link' : '' ?>">Đặt hàng và đến phương thức thanh toán</a>
+            </div>
+
             </div>
           </div>
         </div>

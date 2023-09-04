@@ -14,46 +14,44 @@
         </div>
 
     <!-- Logic -->
-    <div class="container">
-        <?php
-            if (!empty($kw)) {
-                $str = mysqli_real_escape_string($conn, $kw);
-                echo "<h1 class='search-result-title'>Kết quả tìm kiếm cho '" . $str . "'</h1>";
-
-                if (!empty($data_cart)) {
-                    echo '<div class="product-container">';
-
-                foreach ($data_cart as $row) {
-        ?>
-                    <div class="col-4 product-shadow__hover">
-                        <div class="products-item">
-                            <a href="index.php?action=chitietsanpham&id=<?= $row['id_sp']; ?>"><img src="<?php echo $row['hinhanh_sp']; ?>" alt="..."></a>
-                            <div class="product-item__info product-item__info__search">
-                                <a href="index.php?action=chitietsanpham&id=<?= $row['id_sp']; ?>"><h4 class="product-item__title"><?php echo $row['ten_sp']; ?></h4></a>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                    <i class="fa fa-star-o"></i>
+    <?php
+    			/*search*/
+                $kw = $_GET['keyword'];
+    			if(isset($kw)){
+    				$str=mysqli_real_escape_string($conn,$kw);
+    				$sql = "SELECT * FROM `sanpham` WHERE `ten_sp` LIKE '%$str%' OR `gia_sp` LIKE '%$str%'";
+    				$res=mysqli_query($conn,$sql);
+    				echo "<h1 class='search-result-title'>Kết quả tìm kiếm cho '".$str."'</h1>";
+    				?>
+    
+    				<div class="product-container">
+    				<?php
+    				if(mysqli_num_rows($res)>0){
+    					while($row=mysqli_fetch_assoc($res)){?>
+    							<div class="col-4 product-shadow__hover">
+                                    <div class="products-item">
+                                        <a href="index.php?action=chitietsanpham&id=<?=$row['id_sp']; ?>"><img src="<?php echo $row['hinhanh_sp'];?>" alt="..."></a>
+                                        <div class="product-item__info product-item__info__search">
+                                            <a href="index.php?action=chitietsanpham&id=<?=$row['id_sp']; ?>"><h4 class="product-item__title"><?php echo $row['ten_sp'];?></h4></a>
+                                            <div class="rating">
+                                                <i class="fa fa-star" ></i>
+                                                <i class="fa fa-star" ></i>
+                                                <i class="fa fa-star" ></i>
+                                                <i class="fa fa-star-half-o" ></i>
+                                                <i class="fa fa-star-o" ></i>
+                                            </div>
+                                            <p class="product-item__price" class="product-item__price"><?= number_format($row['gia_sp'], 0, ',', '.');?>đ</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <p class="product-item__price"><?= number_format($row['gia_sp'], 0, ',', '.'); ?>đ</p>
-                            </div>
+    		<?php		}
+    				}else{?>
+    					<p style='text-align: center; margin-top: 15px'>Sản phẩm bạn vừa tìm không có trong cửa hàng, Vui lòng kiểm tra lại chính tả và sử dụng các từ tổng quát hơn và thử lại!</p>
+                        <div class="wrapper__img_not_found">
+                            <div class='seacrh-not-found'></div>
                         </div>
-                    </div>
-            <?php
-                    }
-                    echo '</div>';
-                } else {
-            ?>
-                    <p style='text-align: center; margin-top: 15px'>Sản phẩm bạn vừa tìm không có trong cửa hàng, Vui lòng kiểm tra lại chính tả và sử dụng các từ tổng quát hơn và thử lại!</p>
-                    <div class="wrapper__img_not_found">
-                        <div class='seacrh-not-found'></div>
-                    </div>
-            <?php
-                }
-            }
-        ?>
+    				<?php }
+    			}?>
 
             <!-- sp lien quan -->
             <div class="small-container">

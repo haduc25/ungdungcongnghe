@@ -180,6 +180,22 @@ class BaseModel
 		}
 		return $data;
 	}
+
+	// basemodel.php
+	public function timkiemsp($kw) {
+		$sql = "SELECT * FROM `sanpham` WHERE `ten_sp` LIKE '%$kw%' OR `gia_sp` LIKE '%$kw%'";
+		
+		$this->ketqua = $this->connect->query($sql);
+		if ($this->ketqua->num_rows == 0) {
+			$data = 0;
+		} else {
+			while ($row = $this->ketqua->fetch_assoc()) {
+				$data[] = $row;
+			}
+		}
+		return $data;
+	}
+
 	
 
 }

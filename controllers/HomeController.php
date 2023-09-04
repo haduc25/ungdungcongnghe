@@ -79,6 +79,13 @@ class SanphamController
 				// page ketquatimkiem
 				case 'ketquatimkiem':
 					$spnn = $this->model->laysanphamngaunhien(8);
+					$data_cart = [];
+				
+					if (!empty($_GET["keyword"])) {
+						$kw = $_GET['keyword'];
+						$data_cart = $this->model->timkiemsp($kw);
+					}
+				
 					include_once('views/ketquatimkiem.php');
 					break;
 
