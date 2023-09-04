@@ -84,17 +84,14 @@
 
   <div class="px-4 px-lg-0" style="top: 0">
     <!-- For demo purpose -->
-    <div class="container text-white py-5 text-center">
-      <h1 class="display-4" style="font-weight: 700;">Giỏ hàng</h1>
-      </p>
-    </div>  
+    <div class="container text-white py-5 text-center"></div>  
     <!-- End -->    
 
 
   <form action="index.php?action=giohang&task=submit" method="POST">
       <div class="pb-5">
         <div class="container">
-          <div class="row">
+          <div class="row" style="margin-bottom: 22px;">
             <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
               <?php
               if(!isset($data_cart))

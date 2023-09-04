@@ -178,8 +178,9 @@ class SanphamController
 						}
 						break;
 
-				default:
-					break;
+					default:
+						include_once('views/404pages.php');
+						break;
 			}
 		}else{
 			$data = $this->model->layloaisanpham();
