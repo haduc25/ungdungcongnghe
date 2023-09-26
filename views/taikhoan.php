@@ -28,17 +28,17 @@
                                 <hr id="Indicator">
                             </div>
                             <form id="LoginForm" method="post">
-                                <input type="text" placeholder="username" name="tdn" required>
-                                <input type="password" placeholder="password" name="mk" required>
+                                <input type="text" placeholder="username" name="tdn" required maxlength="10">
+                                <input type="password" placeholder="password" name="mk" required maxlength="32">
                                 <button type="submit" class="btn" name="nutdangnhap">Đăng nhập</button>
 				                <!-- <input type="submit" class="btn btn-lg btn-primary" name="nutdangnhap" value="ĐĂNG NHẬP"> -->
                                 <a href="">Quên mật khẩu?</a>
                             </form>
                             
                             <form id="RegForm" method="post">
-                                <input type="text" placeholder="username" name="tendk" required>
-                                <input type="email" placeholder="email" name="emaildk" required>
-                                <input type="password" placeholder="password" name="mkdk" required>
+                                <input type="text" placeholder="username" name="tendk" required maxlength="10">
+                                <input type="email" placeholder="example@email.com" name="emaildk" required maxlength="32">
+                                <input type="password" placeholder="password" name="mkdk" required maxlength="32">
                                 <button type="submit" class="btn" name="nutdangky">Đăng ký</button>
                             </form>
                         </div>
@@ -55,6 +55,8 @@
         
         <!-----------------------------------js for toggle menu-------------------------------------->
         <script>
+            ///////////////////////////// handle toggle form /////////////////////////////
+            "use strict"
             var menuItems=document.getElementById("MenuItems");
             
             MenuItems.style.maxHeight="0px";
@@ -66,10 +68,7 @@
                     MenuItems.style.maxHeight="0px";
                 }
             }
-        </script>
         
-                <!-----------------------------------js for toggle form-------------------------------------->
-        <script>
             var LoginForm=document.getElementById("LoginForm");
             var RegForm=document.getElementById("RegForm");
             var Indicator=document.getElementById("Indicator");
@@ -79,12 +78,12 @@
                 LoginForm.style.transform="translateX(0px)";
                 Indicator.style.transform="translateX(100px)"
             }
+            
             function login(){
                 RegForm.style.transform="translateX(300px)";
                 LoginForm.style.transform="translateX(300px)";
                 Indicator.style.transform="translateX(0px)";
             }
-            // login();
         </script>
 </body>
 </html>

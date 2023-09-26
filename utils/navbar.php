@@ -56,7 +56,7 @@ if (mysqli_connect_errno()){
                     </ul>
                 </li>
             <?php } else { ?>
-                <li><a class="nav-link" href="index.php?action=taikhoan">Đăng nhập</a></li>
+                <li><a class="nav-link" href="index.php?action=taikhoan">Đăng nhập / Đăng ký</a></li>
             <?php } ?>
         </ul>
     </nav>

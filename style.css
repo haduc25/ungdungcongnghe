@@ -493,7 +493,7 @@ th:last-child{
 .form-container span{
     font-family: var(--title-font);
     font-weight: bold;
-    padding: 0 10px;
+    padding: 0 8px;
     color: #555;
     cursor: pointer;
     width: 100px;
@@ -501,6 +501,7 @@ th:last-child{
 }
 
 .form-btn{
+    padding-top: 45px;
     display:inline-block;
 }
 .form-container form{
